@@ -98,6 +98,7 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\CapaDatos.pdb
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleCompra.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Inicio.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmNegocio.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmProducto.resources
@@ -118,4 +119,3 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleCompra.resources

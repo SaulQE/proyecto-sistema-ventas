@@ -57,7 +57,7 @@
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Razon_Social = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nom_Completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -230,7 +230,7 @@
             this.btnseleccionar,
             this.id,
             this.Documento,
-            this.Razon_Social,
+            this.Nom_Completo,
             this.Correo,
             this.Telefono,
             this.EstadoValor,
@@ -413,12 +413,12 @@
             this.Documento.ReadOnly = true;
             this.Documento.Width = 150;
             // 
-            // Razon_Social
+            // Nom_Completo
             // 
-            this.Razon_Social.HeaderText = "Razon Social";
-            this.Razon_Social.Name = "Razon_Social";
-            this.Razon_Social.ReadOnly = true;
-            this.Razon_Social.Width = 250;
+            this.Nom_Completo.HeaderText = "Nombre Completo";
+            this.Nom_Completo.Name = "Nom_Completo";
+            this.Nom_Completo.ReadOnly = true;
+            this.Nom_Completo.Width = 250;
             // 
             // Correo
             // 
@@ -516,7 +516,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Razon_Social;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom_Completo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;

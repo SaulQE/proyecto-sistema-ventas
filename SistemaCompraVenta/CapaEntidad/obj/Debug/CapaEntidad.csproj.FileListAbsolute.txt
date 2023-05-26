@@ -4,3 +4,9 @@ C:\Users\User\Documents\Proyectos\SistemaCompraVenta\SistemaCompraVenta\CapaEnti
 C:\Users\User\Documents\Proyectos\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\Proyectos\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\User\Documents\Proyectos\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaEntidad\obj\Debug\CapaEntidad.pdb

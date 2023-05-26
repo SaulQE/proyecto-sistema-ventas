@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.Xml.Linq;
 
 namespace CapaDatos
 {
@@ -75,6 +77,117 @@ namespace CapaDatos
             }
 
             return Respuesta; // Devuelve la respuesta del registro (true o false)
+        }
+
+        public Compra ObtenerCompra(string numero)
+        {
+            // Se crea una instancia de la clase Compra
+            Compra obj = new Compra();
+            // Se establece una conexión a la base de datos usando SqlConnection
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    // Se crea un objeto StringBuilder para construir la consulta SQL.
+                    StringBuilder query = new StringBuilder();
+
+                    // Se agrega la consulta SQL a la cadena de texto usando AppendLine para cada línea.
+                    query.AppendLine("select c.id_Compra,");
+                    query.AppendLine("u.Nom_Completo,");
+                    query.AppendLine("pr.Documento,pr.Razon_Social,");
+                    query.AppendLine("c.Tipo_Documento, c.Nro_Documento, c.Monto_Total, convert(char(10),c.F_Registro,103)[F_Registro]");
+                    query.AppendLine("from COMPRA c");
+                    query.AppendLine("INNER JOIN USUARIO u on u.id_Usuario = c.id_Usuario");
+                    query.AppendLine("INNER JOIN PROVEEDOR pr on pr.id_Proveedor = c.id_Proveedor");
+                    query.AppendLine("where c.Nro_Documento = @numero");
+
+                    // Se crea un comando SqlCommand con la consulta y la conexión.
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    // Se establece el parámetro @numero con el valor proporcionado en el argumento.
+                    cmd.Parameters.AddWithValue("@numero", numero); 
+                    cmd.CommandType = CommandType.Text;
+
+                    oconexion.Open();
+
+                    // Se ejecuta el comando y se obtiene un SqlDataReader para leer los resultados.
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        // Se lee cada fila del resultado.
+                        while (dr.Read())
+                        {
+                            // Se asignan los valores de las columnas del resultado a las propiedades del objeto Compra.
+                            obj = new Compra()
+                            {
+                                id_Compra = Convert.ToInt32(dr["id_Compra"]),
+                                oUsuario = new Usuario() { Nom_Completo = dr["Nom_Completo"].ToString() },
+                                oProveedor = new Proveedor() { Documento = dr["Documento"].ToString(), Razon_Social = dr["Razon_Social"].ToString() },
+                                Tipo_Documento = dr["Tipo_Documento"].ToString(),
+                                Nro_Documento = dr["Nro_Documento"].ToString(),
+                                Monto_total = Convert.ToDecimal(dr["Monto_Total"].ToString()),
+                                F_Registro = dr["F_Registro"].ToString()
+                            };
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Si ocurre una excepción, se crea una nueva instancia de Compra vacía.
+                    obj = new Compra();
+                }
+            }
+            // Se retorna el objeto Compra obtenido.
+            return obj;
+        }
+
+        public List<Detalle_Compra> ObtenerDetalleCompra (int idcompra)
+        {
+            // Se crea una lista de Detalle_Compra para almacenar los detalles de la compra.
+            List<Detalle_Compra> oLista = new List<Detalle_Compra>();
+            try
+            {
+                // Se establece una conexión a la base de datos usando SqlConnection.
+                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+                {
+                    conexion.Open();
+                    // Se crea un objeto StringBuilder para construir la consulta SQL.
+                    StringBuilder query = new StringBuilder();
+
+                    // Se agrega la consulta SQL a la cadena de texto usando AppendLine para cada línea.
+                    query.AppendLine("select p.Nombre,dc.Precio_Compra,dc.Cantidad,dc.Monto_Total from DETALLE_COMPRA dc");
+                    query.AppendLine("INNER JOIN PRODUCTO p on p.id_Producto = dc.id_Producto");
+                    query.AppendLine("where dc.id_Compra = @idcompra");
+
+                    // Se crea un comando SqlCommand con la consulta y la conexión.
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+
+                    // Se establece el parámetro @idcompra con el valor proporcionado en el argumento.
+                    cmd.Parameters.AddWithValue("@idcompra", idcompra);
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    // Se ejecuta el comando y se obtiene un SqlDataReader para leer los resultados.
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        // Se lee cada fila del resultado.
+                        while (dr.Read())
+                        {
+                            // Se crea un objeto Detalle_Compra y se asignan los valores de las columnas del resultado a sus propiedades.
+                            oLista.Add(new Detalle_Compra()
+                            {
+                                oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
+                                Precio_Compra = Convert.ToDecimal(dr["Precio_Compra"].ToString()),
+                                Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
+                                Monto_Total = Convert.ToDecimal(dr["Monto_Total"].ToString())
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Si ocurre una excepción, se crea una nueva lista de Detalle_Compra vacía.
+                oLista = new List<Detalle_Compra>();
+            }
+            return oLista;
         }
 
     }

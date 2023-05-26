@@ -23,5 +23,21 @@ namespace CapaNegocio
             
             return objcd_compra.Registrar(obj,DetalleCompra,out Mensaje); // Llamada al método Registrar() de la instancia objcd_compra para registrar una compra y obtener el resultado y mensaje correspondiente
         }
+
+        public Compra ObtenerCompra(string numero)
+        {
+            Compra oCompra = objcd_compra.ObtenerCompra(numero); // Llamada al método ObtenerCompra() de la instancia objcd_compra para obtener la información de la compra según el número de documento
+
+            // Se verifica si se obtuvo una compra válida
+            if (oCompra.id_Compra !=  0)
+            {
+                // Se llama al método ObtenerDetalleCompra() de la instancia objcd_compra para obtener los detalles de la compra
+                List<Detalle_Compra> oDetalleCompra = objcd_compra.ObtenerDetalleCompra(oCompra.id_Compra);
+
+                // Se asigna la lista de detalles de compra a la propiedad oDetalle_Compra del objeto Compra
+                oCompra.oDetalle_Compra = oDetalleCompra;
+            }
+            return oCompra;
+        }
     }
 }
