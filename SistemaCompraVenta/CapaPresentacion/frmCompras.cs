@@ -120,7 +120,7 @@ namespace CapaPresentacion
                 MessageBox.Show("Debe seleccionar un producto","Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (!decimal.TryParse(txtpreciocompra.Text, out preciocompra)) // TryParce para convertirlo en un decimal, y sera true
+            if (!decimal.TryParse(txtpreciocompra.Text, out preciocompra)) // TryParce para convertirlo en un decimal, y sera true por que estoy negando false con !
             {
                 MessageBox.Show("Precio Compra - Formato moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtpreciocompra.Select();
@@ -141,7 +141,7 @@ namespace CapaPresentacion
                     break;
                 }
             }
-            if (!producto_existe) // con ! estoy negando el resultado si es falso lo niega y es true
+            if (!producto_existe) // con ! estoy negando el resultado si es true lo niega y es lo vuelve false y viceversa
             {
                 dgvdata.Rows.Add(new object[]
                 {
@@ -156,7 +156,7 @@ namespace CapaPresentacion
 
                 calcularTotal();
                 limpiarProducto();
-                txtcodproducto.Select();
+                txtcodproducto.Select(); 
 
             }
 

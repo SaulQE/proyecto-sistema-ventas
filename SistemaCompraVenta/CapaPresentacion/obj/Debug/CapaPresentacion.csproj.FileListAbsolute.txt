@@ -119,3 +119,8 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\itextsharp.dll
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\itextsharp.xml
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources
