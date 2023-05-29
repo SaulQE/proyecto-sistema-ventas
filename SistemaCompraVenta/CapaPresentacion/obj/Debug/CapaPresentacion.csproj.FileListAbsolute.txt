@@ -124,3 +124,4 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\bin\Debug\itextsharp.xml
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources
+C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleVenta.resources

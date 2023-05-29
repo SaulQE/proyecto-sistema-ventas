@@ -57,7 +57,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Nro_Documento", obj.Nro_Documento); 
                     cmd.Parameters.AddWithValue("Monto_Total", obj.Monto_total); 
                     cmd.Parameters.AddWithValue("Detalle_Compra", DetalleCompra); // Asignación del valor de la tabla de detalle de compra al parámetro
-                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;        // Definición del parámetro de salida para el resultado del registro
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;        // Definición del parámetro de salida para el resultado del registro
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output; // Definición del parámetro de salida para el mensaje de respuesta
 
                     cmd.CommandType = CommandType.StoredProcedure; // Especificación de que el tipo de comando es un procedimiento almacenado

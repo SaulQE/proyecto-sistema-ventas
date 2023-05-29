@@ -149,18 +149,26 @@ namespace CapaPresentacion
 
             if (!producto_existe) // con ! estoy negando el resultado si es true lo niega y es lo vuelve false y viceversa
             {
-                dgvdata.Rows.Add(new object[] 
+                bool respuesta = new CN_Venta().RestarStock( // estoy pasando los parametros del metodo RestaStock
+                    Convert.ToInt32( txtidproducto.Text),
+                    Convert.ToInt32( txtcantidad.Value.ToString())
+                    );
+
+                if (respuesta)
                 {
-                    txtidproducto.Text,  // Agregando
-                    txtproducto.Text,
-                    precio.ToString("0.00"), // Aqui menciono para que se pinten con decimales de 2
-                    txtcantidad.Value.ToString(), // no es textBox, es un NumericUpDown por eso accedo por la propiedad Value 
-                    (txtcantidad.Value * precio).ToString("0.00")
-                });
-                // Ya habiendo registrado el producto en el dgvdata, empieza a calcular el total
-                calcularTotal();
-                limpiarProducto();
-                txtcodproducto.Select();
+                    dgvdata.Rows.Add(new object[]
+                    {
+                        txtidproducto.Text,  // Agregando
+                        txtproducto.Text,
+                        precio.ToString("0.00"), // Aqui menciono para que se pinten con decimales de 2
+                        txtcantidad.Value.ToString(), // no es textBox, es un NumericUpDown por eso accedo por la propiedad Value 
+                        (txtcantidad.Value * precio).ToString("0.00")
+                    });
+                    // Ya habiendo registrado el producto en el dgvdata, empieza a calcular el total
+                    calcularTotal();
+                    limpiarProducto();
+                    txtcodproducto.Select();
+                }
 
             }
 
@@ -174,7 +182,7 @@ namespace CapaPresentacion
                 foreach (DataGridViewRow row in dgvdata.Rows)
                     /* Recorriendo cada uno de ellos y en especial esta recorreiendo la columna subtotal
                        y con el += estoy aumentando el valor de total */
-                    total += Convert.ToDecimal(row.Cells["Monto_Total"].Value.ToString());
+                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
             }
             txttotalpagar.Text = total.ToString("0.00"); // Si no hay registros se pintara lo que tiene total, y viceversa
         }
@@ -192,20 +200,29 @@ namespace CapaPresentacion
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            // Verificar si el indice de la fila es menor a 0, si es así retornara
             if (e.RowIndex < 0)
                 return;
+
+            // Verificar si la columna actual es la columna número 5.
             if (e.ColumnIndex == 5)
             {
+                // Realizar el pintado de todas las partes de la celda.
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
+                // Obtener las dimensiones del ícono "eliminar20" definido en los recursos.
                 var w = Properties.Resources.eliminar20.Width;
                 var h = Properties.Resources.eliminar20.Height;
+
+                // Calcular la posición, y del ícono dentro de la celda para centrarlo.
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
+                // Dibujar el ícono "eliminar20" en la posición calculada.
                 e.Graphics.DrawImage(Properties.Resources.eliminar20, new Rectangle(x, y, w, h));
-                e.Handled = true;
 
+                // Indicar que el evento ha sido manejado
+                e.Handled = true;
             }
         }
 
@@ -217,8 +234,16 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    dgvdata.Rows.RemoveAt(indice); // Cuando elimine un item, tambien calcular el total
-                    calcularTotal();
+                    bool respuesta = new CN_Venta().SumarStock( // estoy pasando los parametros del metodo SumarStock
+                        Convert.ToInt32( dgvdata.Rows[indice].Cells["id"].Value.ToString()),
+                        Convert.ToInt32( dgvdata.Rows[indice].Cells["Cantidad"].Value.ToString()));
+
+                    if (respuesta)
+                    {
+                        dgvdata.Rows.RemoveAt(indice); // Cuando elimine un item, tambien calcular el total
+                        calcularTotal();
+                    }
+
                 }
 
             }
@@ -284,6 +309,7 @@ namespace CapaPresentacion
 
         private void calcularCambio()
         {
+            // Verificar si el campo de texto txttotalpagar está vacío.
             if (txttotalpagar.Text.Trim() == "")
             {
                 MessageBox.Show("No existen productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -293,20 +319,24 @@ namespace CapaPresentacion
             decimal pagacon;
             decimal total = Convert.ToDecimal(txttotalpagar.Text);
 
+            // Verificar si el campo de texto txtpagacon está vacío y establecer su valor a "0" si es así.
             if (txtpagacon.Text.Trim() == "")
             {
                 txtpagacon.Text = "0";
             }
 
+            // Intentar convertir el valor del campo de texto txtpagacon a decimal.
             if (decimal.TryParse(txtpagacon.Text.Trim(), out pagacon))
             {
-                if(pagacon < total)
+                // Verificar si la cantidad pagada es menor al total.
+                if (pagacon < total)
                 {
                     txtcambio.Text = "0.00";
                 }
                 else
                 {
                     decimal cambio = pagacon - total;
+                    // Establecer el valor calculado en el campo de texto txtcambio formateado como "0.00".
                     txtcambio.Text = cambio.ToString("0.00");
 
                 }
@@ -316,10 +346,90 @@ namespace CapaPresentacion
 
         private void txtpagacon_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            // Verificar si se presionó la tecla Enter.
+            if (e.KeyData == Keys.Enter)
             {
+                // Llamar al método calcularCambio.
                 calcularCambio();
             }
+        }
+
+        private void btncrearventa_Click(object sender, EventArgs e)
+        {
+
+            if (txtdocliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar documento del cliente","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (txtnombrecliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DataTable detalle_venta = new DataTable();
+
+            detalle_venta.Columns.Add("id_Producto", typeof(int));
+            detalle_venta.Columns.Add("Precio_Venta", typeof(decimal));
+            detalle_venta.Columns.Add("Cantidad", typeof(int));
+            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                detalle_venta.Rows.Add(new object[]
+                {
+                    row.Cells["id"].Value.ToString(),
+                    row.Cells["Precio_Venta"].Value.ToString(),
+                    row.Cells["Cantidad"].Value.ToString(),
+                    row.Cells["SubTotal"].Value.ToString(),
+                });
+            }
+
+            int idcorrelativo = new CN_Venta().ObtenerCorrelativo();
+            string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
+            calcularCambio();
+
+            Venta oVenta = new Venta()
+            {
+                oUsuario = new Usuario() { id_Usuario = _Usuario.id_Usuario },
+                Tipo_Documento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
+                Nro_Documento = numeroDocumento,
+                Documento_Cliente = txtdocliente.Text,
+                Nom_Cliente = txtnombrecliente.Text,
+                Monto_Pago = Convert.ToDecimal(txtpagacon.Text),
+                Monto_Cambio = Convert.ToDecimal(txtcambio.Text),
+                Monto_Total = Convert.ToDecimal(txttotalpagar.Text)
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show("Número de venta generado:\n" + numeroDocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                    Clipboard.SetText(numeroDocumento);
+
+                txtdocliente.Text = "";
+                txtnombrecliente.Text = "";
+                dgvdata.Rows.Clear();
+                calcularTotal();
+                txtpagacon.Text = "";
+                txtcambio.Text = "";
+            }
+            else
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
     }
 }
