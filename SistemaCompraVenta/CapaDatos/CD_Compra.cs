@@ -160,7 +160,7 @@ namespace CapaDatos
                     // Se crea un comando SqlCommand con la consulta y la conexión.
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
 
-                    // Se establece el parámetro @idcompra con el valor proporcionado en el argumento.
+                    // Se establece el parámetro @idcompra con el valor proporcionado en el metodo.
                     cmd.Parameters.AddWithValue("@idcompra", idcompra);
                     cmd.CommandType = System.Data.CommandType.Text;
 
@@ -170,7 +170,7 @@ namespace CapaDatos
                         // Se lee cada fila del resultado.
                         while (dr.Read())
                         {
-                            // Se crea un objeto Detalle_Compra y se asignan los valores de las columnas del resultado a sus propiedades.
+                            // En el objeto creado de Detalle_Compra se asignan los valores de las columnas del resultado a sus propiedades.
                             oLista.Add(new Detalle_Compra()
                             {
                                 oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },

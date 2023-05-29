@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaEntidad;
+using System.Reflection;
 
 namespace CapaDatos
 {
@@ -145,6 +146,118 @@ namespace CapaDatos
             
 
             return Respuesta; // Devuelve la respuesta del registro (true o false)
+        }
+
+        public Venta ObtenerVenta(string numero)
+        {
+            Venta obj = new Venta();
+
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    conexion.Open();
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("select v.id_Venta,u.Nom_Completo,");
+                    query.AppendLine("v.Documento_Cliente,v.Nom_Cliente,");
+                    query.AppendLine("v.Tipo_Documento,v.Nro_Documento,");
+                    query.AppendLine("v.Monto_Pago,v.Monto_Cambio,v.Monto_Total,");
+                    query.AppendLine("convert(char(10), v.F_Registro, 103)[F_Registro]");
+                    query.AppendLine("from VENTA v");
+                    query.AppendLine("INNER JOIN USUARIO u on u.id_Usuario = v.id_Usuario");
+                    query.AppendLine("where v.Nro_Documento = @numero");
+
+                    // Se crea un comando SqlCommand con la consulta y la conexión.
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+
+                    // Se establece el parámetro @numero con el valor proporcionado en el metodo.
+                    cmd.Parameters.AddWithValue("@numero", numero);
+
+                    cmd.CommandType = CommandType.Text;
+
+                    // Se ejecuta el comando y se obtiene un SqlDataReader para leer los resultados.
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        // Se lee cada fila del resultado.
+                        while (dr.Read())
+                        {
+                            // Se asignan los valores de las columnas del resultado a las propiedades del objeto Venta.
+                            obj = new Venta()
+                            {
+                                id_Venta = int.Parse(dr["id_Venta"].ToString()),
+                                oUsuario = new Usuario() { Nom_Completo = dr["Nom_Completo"].ToString() },
+                                Documento_Cliente = dr["Documento_Cliente"].ToString(),
+                                Nom_Cliente = dr["Nom_Cliente"].ToString(),
+                                Tipo_Documento = dr["Tipo_Documento"].ToString(),
+                                Nro_Documento = dr["Nro_Documento"].ToString(),
+                                Monto_Pago = Convert.ToDecimal(dr["Monto_Pago"].ToString()),
+                                Monto_Cambio = Convert.ToDecimal(dr["Monto_Cambio"].ToString()),
+                                Monto_Total = Convert.ToDecimal(dr["Monto_Total"].ToString()),
+                                F_Registro = dr["F_Registro"].ToString()
+                            };
+                        }
+                    }
+                }
+                catch
+                {
+                    // Si ocurre una excepción, se crea una nueva instancia de Venta vacía.
+                    obj = new Venta();
+                }
+
+            }
+            // Se retorna el objeto venta obtenido.
+            return obj;
+        }
+
+        public List<Detalle_Venta> ObtenerDetalleVenta(int idventa)
+        {
+            List<Detalle_Venta> oLista = new List<Detalle_Venta>();
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    conexion.Open();
+                    // Se crea un objeto StringBuilder para construir la consulta SQL.
+                    StringBuilder query = new StringBuilder();
+
+                    // Se agrega la consulta SQL a la cadena de texto usando AppendLine para cada línea.
+                    query.AppendLine("select p.Nombre,dv.Precio_Venta,dv.Cantidad,dv.SubTotal from DETALLE_VENTA dv");
+                    query.AppendLine("INNER JOIN PRODUCTO p on p.id_Producto = dv.id_Producto");
+                    query.AppendLine("where dv.id_Venta = @idventa");
+
+                    // Se crea un comando SqlCommand con la consulta y la conexión.
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+
+                    // Se establece el parámetro @idventa con el valor proporcionado en el metodo.
+                    cmd.Parameters.AddWithValue("@idventa", idventa);
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    // Se ejecuta el comando y se obtiene un SqlDataReader para leer los resultados.
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        // Se lee cada fila del resultado.
+                        while (dr.Read())
+                        {
+                            // En el objeto creado de Detalle_Venta se asignan los valores de las columnas del resultado a sus propiedades.
+                            oLista.Add(new Detalle_Venta()
+                            {
+                                oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
+                                Precio_Venta = Convert.ToDecimal(dr["Precio_Venta"].ToString()),
+                                Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
+                                SubTotal = Convert.ToDecimal(dr["SubTotal"].ToString())
+                            });
+                        }
+                    }
+
+                }
+                catch
+                {
+                    // Si ocurre una excepción, se crea una nueva lista de Detalle_Venta vacía.
+                    oLista = new List<Detalle_Venta>();
+                }
+            }
+                return oLista;
         }
 
 

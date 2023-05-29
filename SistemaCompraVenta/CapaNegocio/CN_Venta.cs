@@ -34,5 +34,19 @@ namespace CapaNegocio
             return objcd_venta.Registrar(obj, DetalleVenta, out Mensaje); // Llamada al método Registrar() de la instancia objcd_compra para registrar una compra y obtener el resultado y mensaje correspondiente
         }
 
+        public Venta ObtenerVenta(string numero)
+        {
+            Venta oVenta = objcd_venta.ObtenerVenta(numero);
+
+            // Validar si realmente obtuvo una venta o no existe
+            if(oVenta.id_Venta != 0)
+            {
+                List<Detalle_Venta> oDetalleVenta = objcd_venta.ObtenerDetalleVenta(oVenta.id_Venta);
+                oVenta.oDetalle_Venta = oDetalleVenta;
+            }
+
+            return oVenta;
+        }
+
     }
 }
