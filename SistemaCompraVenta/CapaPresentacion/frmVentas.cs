@@ -375,15 +375,19 @@ namespace CapaPresentacion
                 return;
             }
 
+            // Crea una DataTable para almacenar el detalle de la venta
             DataTable detalle_venta = new DataTable();
 
+            // Agrega las columnas a la DataTable
             detalle_venta.Columns.Add("id_Producto", typeof(int));
             detalle_venta.Columns.Add("Precio_Venta", typeof(decimal));
             detalle_venta.Columns.Add("Cantidad", typeof(int));
             detalle_venta.Columns.Add("SubTotal", typeof(decimal));
 
+            // Recorre cada fila del DataGridView
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
+                // Agrega una nueva fila a la DataTable con los valores de la fila del DataGridView
                 detalle_venta.Rows.Add(new object[]
                 {
                     row.Cells["id"].Value.ToString(),
@@ -393,10 +397,14 @@ namespace CapaPresentacion
                 });
             }
 
+            // Obtiene el correlativo de la compra
             int idcorrelativo = new CN_Venta().ObtenerCorrelativo();
+
+            // Formatea el correlativo como un número de documento
             string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
             calcularCambio();
 
+            // Crea un objeto de tipo Venta con los datos ingresados
             Venta oVenta = new Venta()
             {
                 oUsuario = new Usuario() { id_Usuario = _Usuario.id_Usuario },
@@ -410,16 +418,19 @@ namespace CapaPresentacion
             };
 
             string mensaje = string.Empty;
+            // Llama al método Registrar() de la capa de negocio para registrar la venta
             bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
 
             if (respuesta)
             {
+                // Muestra el número de compra generado y pregunta si desea copiarlo al portapapeles
                 var result = MessageBox.Show("Número de venta generado:\n" + numeroDocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (result == DialogResult.Yes)
                     Clipboard.SetText(numeroDocumento);
 
+                // Reinicia los campos y el DataGridView
                 txtdocliente.Text = "";
                 txtnombrecliente.Text = "";
                 dgvdata.Rows.Clear();

@@ -46,16 +46,21 @@ namespace CapaDatos
             {
                 try
                 {
+                    // Construir el comando SQL para actualizar el stock del producto restando la cantidad especificada.
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update PRODUCTO set Stock = Stock - @cantidad where id_Producto = @idproducto");
 
+                    // Creación del objeto SqlCommand para ejecutar el comando SQL en la base de datos.
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconoxion);
+
+                    // Asignación de parámetros a la consulta SQL.
                     cmd.Parameters.AddWithValue("@cantidad", cantidad);
                     cmd.Parameters.AddWithValue("@idproducto", idproducto);
                     cmd.CommandType = CommandType.Text;
 
                     oconoxion.Open();
 
+                    // Ejecutar el comando y verificar si se afectaron filas en la base de datos.
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
 
                 }catch (Exception ex)
@@ -74,16 +79,21 @@ namespace CapaDatos
             {
                 try
                 {
+                    // Construir el comando SQL para actualizar el stock del producto sumando la cantidad especificada.
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update PRODUCTO set Stock = Stock + @cantidad where id_Producto = @idproducto");
 
+                    // Creación del objeto SqlCommand para ejecutar el comando SQL en la base de datos.
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconoxion);
+
+                    // Asignación de parámetros a la consulta SQL.
                     cmd.Parameters.AddWithValue("@cantidad", cantidad);
                     cmd.Parameters.AddWithValue("@idproducto", idproducto);
                     cmd.CommandType = CommandType.Text;
 
                     oconoxion.Open();
 
+                    // Ejecutar el comando y verificar si se afectaron filas en la base de datos.
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
 
                 }
