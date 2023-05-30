@@ -132,16 +132,14 @@ namespace CapaPresentacion
             AbrirFormulario((Button)sender, new frmProveedores());
         }
 
-        private void menureportes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((Button)sender, new frmReportes());
-        }
+
 
         private void personalizardiseño()
         {
             submenumantenimiento.Visible = false;
             submenuventas.Visible = false;
             submenucompras.Visible = false;
+            submenureportes.Visible = false;
         }
         private void ocultarsubmenu()
         {
@@ -151,6 +149,8 @@ namespace CapaPresentacion
                 submenuventas.Visible = false;
             if (submenucompras.Visible == true)
                 submenucompras.Visible = false;
+            if (submenureportes.Visible == true)
+                submenureportes.Visible = false;
         }
 
         private void mostrarsubmenu(Panel submenu)
@@ -169,6 +169,21 @@ namespace CapaPresentacion
         private void submenunegocio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((Button)sender, new frmNegocio());
+        }
+
+        private void submenureportecompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menureportes, new frmReporteCompras());
+        }
+
+        private void submenureporteventas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menureportes, new frmReporteVentas());
+        }
+
+        private void menureportes_Click(object sender, EventArgs e)
+        {
+            mostrarsubmenu(submenureportes); 
         }
     }
 }
