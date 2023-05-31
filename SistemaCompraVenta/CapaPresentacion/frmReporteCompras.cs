@@ -23,45 +23,58 @@ namespace CapaPresentacion
 
         private void frmReporteCompras_Load(object sender, EventArgs e)
         {
+            // Cargar la lista de proveedores desde la capa de negocios
             List<Proveedor> lista = new CN_Proveedor().Listar();
 
+            // Agregar un elemento adicional para mostrar todos los proveedores
             cboproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "TODOS" });
+
+            // Agregar cada proveedor a la lista desplegable
             foreach (Proveedor item in lista)
             {
+                // Agrega un nuevo elemento a la lista desplegable cboproveedor con el ID del proveedor como valor y el nombre del proveedor como texto
                 cboproveedor.Items.Add(new OpcionCombo() { Valor = item.id_Proveedor, Texto = item.Razon_Social});
             }
+
+            // Establecer las propiedades de visualización y valor de la lista desplegable de proveedores
             cboproveedor.DisplayMember = "Texto";
             cboproveedor.ValueMember = "Valor";
             cboproveedor.SelectedIndex = 0;
 
 
-
+            // Agregar cada columna del DataGridView a la lista desplegable de búsqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
             }
+            // Establecer las propiedades de visualización y valor de la lista desplegable de búsqueda
             cbobusqueda.DisplayMember = "Texto";
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
-
         }
 
         private void btnbuscarproveedor_Click(object sender, EventArgs e)
         {
+            // Obtener el ID del proveedor seleccionado en la lista desplegable
             int idproveedor = Convert.ToInt32(((OpcionCombo)cboproveedor.SelectedItem).Valor.ToString());
 
+            // Obtener la lista de compras desde la capa de negocios
             List<ReporteCompra> lista = new List<ReporteCompra>();
 
+            // Se llama al método de la clase CN_Reporte para obtener la lista de compras, se pasan los parametros y el resultado se asigna a la variable lista
             lista = new CN_Reporte().Compra(
                 txtfechainicio.Value.ToString(),
                 txtfechafin.Value.ToString(),
                 idproveedor
                 );
 
+            // Limpiar las filas existentes en el DataGridView
             dgvdata.Rows.Clear();
 
+            // Agregar cada objeto ReporteCompra a una nueva fila en el DataGridView
             foreach(ReporteCompra rc in lista)
             {
+                // Agregar filas al dgvdata, para eso se utiliza new object para crear un nuevo arreglo de objetos que contenga los valores
                 dgvdata.Rows.Add(new object[]
                 {
                     rc.F_Registro,
@@ -94,16 +107,20 @@ namespace CapaPresentacion
             {
                 DataTable dt = new DataTable();
 
-                foreach (DataGridViewColumn columna in dgvdata.Columns) // accedo a todas las columnas que tiene mi dgvdata
+                // accedo a todas las columnas que tiene mi dgvdata
+                foreach (DataGridViewColumn columna in dgvdata.Columns) 
                 {
-                        dt.Columns.Add(columna.HeaderText, typeof(string));
+
+                    // Agregar una nueva columna al DataTable con el encabezado de la columna actual del DataGridView
+                    dt.Columns.Add(columna.HeaderText, typeof(string));
                 }
 
                 foreach (DataGridViewRow row in dgvdata.Rows) // accedo a todas las filas de mi datagridview
                 {
                     if (row.Visible)
+                        // Agregar los valores de cada celda de la fila actual al DataTable
                         dt.Rows.Add(new object[]{
-                            row.Cells[0].Value.ToString(),  // para empezar desde el indice 2
+                            row.Cells[0].Value.ToString(),
                             row.Cells[1].Value.ToString(),
                             row.Cells[2].Value.ToString(),
                             row.Cells[3].Value.ToString(),
@@ -127,9 +144,14 @@ namespace CapaPresentacion
                 {
                     try
                     {
+                        // Crear un nuevo documento de Excel y agregar los datos del DataTable en una hoja
                         XLWorkbook wb = new XLWorkbook();
                         var hoja = wb.Worksheets.Add(dt, "Informe");
-                        hoja.ColumnsUsed().AdjustToContents(); // Se ajuste el ancho de las columnas segun el valor que tengan
+
+                        // Ajustar el ancho de las columnas según el contenido
+                        hoja.ColumnsUsed().AdjustToContents();
+
+                        // Guardar el archivo en la ubicación especificada
                         wb.SaveAs(saveFile.FileName);
                         MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -144,6 +166,7 @@ namespace CapaPresentacion
             }
         }
 
+        // Metodo para el btnbuscar
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -162,6 +185,7 @@ namespace CapaPresentacion
             }
         }
 
+        // Metodo para el btnlimpiarbuscador
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
