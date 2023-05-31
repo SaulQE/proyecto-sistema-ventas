@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ESTA APLICACIÓN DE ESCRITORIO HA SIDO DESARROLLADA PARA FACILITAR LOS PROCESOS DE COMPRA Y VENTA. TE PERMITIRÁ GESTIONAR USUARIOS, PRODUCTOS, CATEGORÍAS, VENTAS, COMPRAS, CLIENTES, PROVEEDORES, REPORTES Y REALIZAR TRANSACCIONES DE MANERA EFICIENTE CON UNA INTERFAZ INTUITIVA.</value>
+  </data>
 </root>

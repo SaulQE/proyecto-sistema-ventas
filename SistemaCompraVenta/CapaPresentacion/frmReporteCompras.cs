@@ -185,7 +185,6 @@ namespace CapaPresentacion
             }
         }
 
-        // Metodo para el btnlimpiarbuscador
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";

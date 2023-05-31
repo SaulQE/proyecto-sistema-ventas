@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.menu = new System.Windows.Forms.Panel();
+            this.menuacercade = new System.Windows.Forms.Button();
+            this.submenureportes = new System.Windows.Forms.Panel();
+            this.submenureporteventas = new System.Windows.Forms.Button();
+            this.submenureportecompras = new System.Windows.Forms.Button();
             this.menureportes = new System.Windows.Forms.Button();
             this.menuproveedores = new System.Windows.Forms.Button();
             this.menuclientes = new System.Windows.Forms.Button();
@@ -48,22 +51,20 @@
             this.menumantenimiento = new System.Windows.Forms.Button();
             this.menuusuarios = new System.Windows.Forms.Button();
             this.menuLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
-            this.contenedor = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.submenureportes = new System.Windows.Forms.Panel();
-            this.submenureporteventas = new System.Windows.Forms.Button();
-            this.submenureportecompras = new System.Windows.Forms.Button();
-            this.menuacercade = new System.Windows.Forms.Button();
+            this.contenedor = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnsalir = new FontAwesome.Sharp.IconButton();
             this.menu.SuspendLayout();
+            this.submenureportes.SuspendLayout();
             this.submenucompras.SuspendLayout();
             this.submenuventas.SuspendLayout();
             this.submenumantenimiento.SuspendLayout();
             this.menuLogo.SuspendLayout();
-            this.contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.submenureportes.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -87,8 +88,85 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Margin = new System.Windows.Forms.Padding(2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(250, 665);
+            this.menu.Size = new System.Drawing.Size(250, 776);
             this.menu.TabIndex = 2;
+            // 
+            // menuacercade
+            // 
+            this.menuacercade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuacercade.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menuacercade.FlatAppearance.BorderSize = 0;
+            this.menuacercade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.menuacercade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.menuacercade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuacercade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuacercade.ForeColor = System.Drawing.Color.White;
+            this.menuacercade.Image = global::CapaPresentacion.Properties.Resources.acercade;
+            this.menuacercade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuacercade.Location = new System.Drawing.Point(0, 846);
+            this.menuacercade.Margin = new System.Windows.Forms.Padding(2);
+            this.menuacercade.Name = "menuacercade";
+            this.menuacercade.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.menuacercade.Size = new System.Drawing.Size(233, 46);
+            this.menuacercade.TabIndex = 20;
+            this.menuacercade.Text = "            Acerca de";
+            this.menuacercade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuacercade.UseVisualStyleBackColor = true;
+            this.menuacercade.Click += new System.EventHandler(this.menuacercade_Click);
+            // 
+            // submenureportes
+            // 
+            this.submenureportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.submenureportes.Controls.Add(this.submenureporteventas);
+            this.submenureportes.Controls.Add(this.submenureportecompras);
+            this.submenureportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.submenureportes.Location = new System.Drawing.Point(0, 763);
+            this.submenureportes.Margin = new System.Windows.Forms.Padding(2);
+            this.submenureportes.Name = "submenureportes";
+            this.submenureportes.Size = new System.Drawing.Size(233, 83);
+            this.submenureportes.TabIndex = 19;
+            // 
+            // submenureporteventas
+            // 
+            this.submenureporteventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submenureporteventas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.submenureporteventas.FlatAppearance.BorderSize = 0;
+            this.submenureporteventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.submenureporteventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.submenureporteventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submenureporteventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenureporteventas.ForeColor = System.Drawing.Color.White;
+            this.submenureporteventas.Location = new System.Drawing.Point(0, 39);
+            this.submenureporteventas.Margin = new System.Windows.Forms.Padding(2);
+            this.submenureporteventas.Name = "submenureporteventas";
+            this.submenureporteventas.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.submenureporteventas.Size = new System.Drawing.Size(233, 39);
+            this.submenureporteventas.TabIndex = 1;
+            this.submenureporteventas.Text = "Reporte Ventas";
+            this.submenureporteventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.submenureporteventas.UseVisualStyleBackColor = true;
+            this.submenureporteventas.Click += new System.EventHandler(this.submenureporteventas_Click);
+            // 
+            // submenureportecompras
+            // 
+            this.submenureportecompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submenureportecompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.submenureportecompras.FlatAppearance.BorderSize = 0;
+            this.submenureportecompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.submenureportecompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.submenureportecompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submenureportecompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenureportecompras.ForeColor = System.Drawing.Color.White;
+            this.submenureportecompras.Location = new System.Drawing.Point(0, 0);
+            this.submenureportecompras.Margin = new System.Windows.Forms.Padding(2);
+            this.submenureportecompras.Name = "submenureportecompras";
+            this.submenureportecompras.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.submenureportecompras.Size = new System.Drawing.Size(233, 39);
+            this.submenureportecompras.TabIndex = 0;
+            this.submenureportecompras.Text = "Reporte Compras";
+            this.submenureportecompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.submenureportecompras.UseVisualStyleBackColor = true;
+            this.submenureportecompras.Click += new System.EventHandler(this.submenureportecompras_Click);
             // 
             // menureportes
             // 
@@ -102,7 +180,7 @@
             this.menureportes.ForeColor = System.Drawing.Color.White;
             this.menureportes.Image = global::CapaPresentacion.Properties.Resources.reportes;
             this.menureportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menureportes.Location = new System.Drawing.Point(0, 671);
+            this.menureportes.Location = new System.Drawing.Point(0, 717);
             this.menureportes.Margin = new System.Windows.Forms.Padding(2);
             this.menureportes.Name = "menureportes";
             this.menureportes.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -125,7 +203,7 @@
             this.menuproveedores.ForeColor = System.Drawing.Color.White;
             this.menuproveedores.Image = global::CapaPresentacion.Properties.Resources.proveedores;
             this.menuproveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuproveedores.Location = new System.Drawing.Point(0, 625);
+            this.menuproveedores.Location = new System.Drawing.Point(0, 671);
             this.menuproveedores.Margin = new System.Windows.Forms.Padding(2);
             this.menuproveedores.Name = "menuproveedores";
             this.menuproveedores.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -148,7 +226,7 @@
             this.menuclientes.ForeColor = System.Drawing.Color.White;
             this.menuclientes.Image = global::CapaPresentacion.Properties.Resources.clientes;
             this.menuclientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuclientes.Location = new System.Drawing.Point(0, 579);
+            this.menuclientes.Location = new System.Drawing.Point(0, 625);
             this.menuclientes.Margin = new System.Windows.Forms.Padding(2);
             this.menuclientes.Name = "menuclientes";
             this.menuclientes.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -165,7 +243,7 @@
             this.submenucompras.Controls.Add(this.submenuverdetallecompra);
             this.submenucompras.Controls.Add(this.submenuregistrarcompra);
             this.submenucompras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.submenucompras.Location = new System.Drawing.Point(0, 496);
+            this.submenucompras.Location = new System.Drawing.Point(0, 542);
             this.submenucompras.Margin = new System.Windows.Forms.Padding(2);
             this.submenucompras.Name = "submenucompras";
             this.submenucompras.Size = new System.Drawing.Size(233, 83);
@@ -225,7 +303,7 @@
             this.menucompras.ForeColor = System.Drawing.Color.White;
             this.menucompras.Image = global::CapaPresentacion.Properties.Resources.compras;
             this.menucompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menucompras.Location = new System.Drawing.Point(0, 450);
+            this.menucompras.Location = new System.Drawing.Point(0, 496);
             this.menucompras.Margin = new System.Windows.Forms.Padding(2);
             this.menucompras.Name = "menucompras";
             this.menucompras.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -242,7 +320,7 @@
             this.submenuventas.Controls.Add(this.submenuverdetalleventa);
             this.submenuventas.Controls.Add(this.submenuregistrarventa);
             this.submenuventas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.submenuventas.Location = new System.Drawing.Point(0, 367);
+            this.submenuventas.Location = new System.Drawing.Point(0, 413);
             this.submenuventas.Margin = new System.Windows.Forms.Padding(2);
             this.submenuventas.Name = "submenuventas";
             this.submenuventas.Size = new System.Drawing.Size(233, 83);
@@ -302,7 +380,7 @@
             this.menuventas.ForeColor = System.Drawing.Color.White;
             this.menuventas.Image = global::CapaPresentacion.Properties.Resources.ventas;
             this.menuventas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuventas.Location = new System.Drawing.Point(0, 321);
+            this.menuventas.Location = new System.Drawing.Point(0, 367);
             this.menuventas.Margin = new System.Windows.Forms.Padding(2);
             this.menuventas.Name = "menuventas";
             this.menuventas.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -320,7 +398,7 @@
             this.submenumantenimiento.Controls.Add(this.submenuproductos);
             this.submenumantenimiento.Controls.Add(this.submenucategoria);
             this.submenumantenimiento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.submenumantenimiento.Location = new System.Drawing.Point(0, 200);
+            this.submenumantenimiento.Location = new System.Drawing.Point(0, 246);
             this.submenumantenimiento.Margin = new System.Windows.Forms.Padding(2);
             this.submenumantenimiento.Name = "submenumantenimiento";
             this.submenumantenimiento.Size = new System.Drawing.Size(233, 121);
@@ -401,7 +479,7 @@
             this.menumantenimiento.ForeColor = System.Drawing.Color.White;
             this.menumantenimiento.Image = global::CapaPresentacion.Properties.Resources.mantenimiento;
             this.menumantenimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menumantenimiento.Location = new System.Drawing.Point(0, 154);
+            this.menumantenimiento.Location = new System.Drawing.Point(0, 200);
             this.menumantenimiento.Margin = new System.Windows.Forms.Padding(2);
             this.menumantenimiento.Name = "menumantenimiento";
             this.menumantenimiento.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -424,7 +502,7 @@
             this.menuusuarios.ForeColor = System.Drawing.Color.White;
             this.menuusuarios.Image = global::CapaPresentacion.Properties.Resources.userswhite;
             this.menuusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuusuarios.Location = new System.Drawing.Point(0, 108);
+            this.menuusuarios.Location = new System.Drawing.Point(0, 154);
             this.menuusuarios.Margin = new System.Windows.Forms.Padding(2);
             this.menuusuarios.Name = "menuusuarios";
             this.menuusuarios.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -437,22 +515,31 @@
             // 
             // menuLogo
             // 
-            this.menuLogo.Controls.Add(this.label1);
-            this.menuLogo.Controls.Add(this.lblusuario);
+            this.menuLogo.Controls.Add(this.pictureBox1);
             this.menuLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuLogo.Location = new System.Drawing.Point(0, 0);
             this.menuLogo.Margin = new System.Windows.Forms.Padding(2);
             this.menuLogo.Name = "menuLogo";
-            this.menuLogo.Size = new System.Drawing.Size(233, 108);
+            this.menuLogo.Size = new System.Drawing.Size(233, 154);
             this.menuLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logocentro;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(43)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(923, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 22;
@@ -461,10 +548,10 @@
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
-            this.lblusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(43)))));
+            this.lblusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(81, 20);
+            this.lblusuario.Location = new System.Drawing.Point(992, 42);
             this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(71, 18);
@@ -474,128 +561,81 @@
             // contenedor
             // 
             this.contenedor.BackColor = System.Drawing.Color.White;
-            this.contenedor.Controls.Add(this.pictureBox1);
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(250, 0);
-            this.contenedor.Margin = new System.Windows.Forms.Padding(2);
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.contenedor.Location = new System.Drawing.Point(250, 108);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1214, 665);
+            this.contenedor.Size = new System.Drawing.Size(1214, 668);
             this.contenedor.TabIndex = 3;
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(507, 213);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 194);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Location = new System.Drawing.Point(250, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1214, 108);
+            this.label3.TabIndex = 4;
             // 
-            // submenureportes
+            // label2
             // 
-            this.submenureportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
-            this.submenureportes.Controls.Add(this.submenureporteventas);
-            this.submenureportes.Controls.Add(this.submenureportecompras);
-            this.submenureportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.submenureportes.Location = new System.Drawing.Point(0, 717);
-            this.submenureportes.Margin = new System.Windows.Forms.Padding(2);
-            this.submenureportes.Name = "submenureportes";
-            this.submenureportes.Size = new System.Drawing.Size(233, 83);
-            this.submenureportes.TabIndex = 19;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(274, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(335, 29);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Sistema de Compra y Venta";
             // 
-            // submenureporteventas
+            // btnsalir
             // 
-            this.submenureporteventas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submenureporteventas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.submenureporteventas.FlatAppearance.BorderSize = 0;
-            this.submenureporteventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.submenureporteventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.submenureporteventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenureporteventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submenureporteventas.ForeColor = System.Drawing.Color.White;
-            this.submenureporteventas.Location = new System.Drawing.Point(0, 39);
-            this.submenureporteventas.Margin = new System.Windows.Forms.Padding(2);
-            this.submenureporteventas.Name = "submenureporteventas";
-            this.submenureporteventas.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenureporteventas.Size = new System.Drawing.Size(233, 39);
-            this.submenureporteventas.TabIndex = 1;
-            this.submenureporteventas.Text = "Reporte Ventas";
-            this.submenureporteventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submenureporteventas.UseVisualStyleBackColor = true;
-            this.submenureporteventas.Click += new System.EventHandler(this.submenureporteventas_Click);
-            // 
-            // submenureportecompras
-            // 
-            this.submenureportecompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submenureportecompras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.submenureportecompras.FlatAppearance.BorderSize = 0;
-            this.submenureportecompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.submenureportecompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.submenureportecompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenureportecompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submenureportecompras.ForeColor = System.Drawing.Color.White;
-            this.submenureportecompras.Location = new System.Drawing.Point(0, 0);
-            this.submenureportecompras.Margin = new System.Windows.Forms.Padding(2);
-            this.submenureportecompras.Name = "submenureportecompras";
-            this.submenureportecompras.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenureportecompras.Size = new System.Drawing.Size(233, 39);
-            this.submenureportecompras.TabIndex = 0;
-            this.submenureportecompras.Text = "Reporte Compras";
-            this.submenureportecompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submenureportecompras.UseVisualStyleBackColor = true;
-            this.submenureportecompras.Click += new System.EventHandler(this.submenureportecompras_Click);
-            // 
-            // menuacercade
-            // 
-            this.menuacercade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuacercade.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menuacercade.FlatAppearance.BorderSize = 0;
-            this.menuacercade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.menuacercade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.menuacercade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuacercade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuacercade.ForeColor = System.Drawing.Color.White;
-            this.menuacercade.Image = global::CapaPresentacion.Properties.Resources.acercade;
-            this.menuacercade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuacercade.Location = new System.Drawing.Point(0, 800);
-            this.menuacercade.Margin = new System.Windows.Forms.Padding(2);
-            this.menuacercade.Name = "menuacercade";
-            this.menuacercade.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menuacercade.Size = new System.Drawing.Size(233, 46);
-            this.menuacercade.TabIndex = 20;
-            this.menuacercade.Text = "            Acerca de";
-            this.menuacercade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuacercade.UseVisualStyleBackColor = true;
+            this.btnsalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.btnsalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnsalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsalir.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnsalir.IconColor = System.Drawing.Color.White;
+            this.btnsalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnsalir.IconSize = 52;
+            this.btnsalir.Location = new System.Drawing.Point(1349, 25);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnsalir.Size = new System.Drawing.Size(73, 54);
+            this.btnsalir.TabIndex = 24;
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1464, 665);
+            this.ClientSize = new System.Drawing.Size(1464, 776);
+            this.Controls.Add(this.btnsalir);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblusuario);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MaximumSize = new System.Drawing.Size(1480, 704);
+            this.MaximumSize = new System.Drawing.Size(1480, 900);
             this.MinimumSize = new System.Drawing.Size(1480, 704);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DiseñoFormulario";
             this.Load += new System.EventHandler(this.DiseñoFormulario_Load);
             this.menu.ResumeLayout(false);
+            this.submenureportes.ResumeLayout(false);
             this.submenucompras.ResumeLayout(false);
             this.submenuventas.ResumeLayout(false);
             this.submenumantenimiento.ResumeLayout(false);
             this.menuLogo.ResumeLayout(false);
             this.menuLogo.PerformLayout();
-            this.contenedor.ResumeLayout(false);
-            this.contenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.submenureportes.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -604,8 +644,6 @@
         private System.Windows.Forms.Panel menu;
         private System.Windows.Forms.Button menuusuarios;
         private System.Windows.Forms.Panel menuLogo;
-        private System.Windows.Forms.Panel contenedor;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button menumantenimiento;
         private System.Windows.Forms.Panel submenumantenimiento;
         private System.Windows.Forms.Button submenuproductos;
@@ -628,5 +666,10 @@
         private System.Windows.Forms.Panel submenureportes;
         private System.Windows.Forms.Button submenureporteventas;
         private System.Windows.Forms.Button submenureportecompras;
+        private System.Windows.Forms.Label contenedor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton btnsalir;
     }
 }
