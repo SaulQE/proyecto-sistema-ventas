@@ -45,8 +45,6 @@ namespace CapaPresentacion
                 MessageBox.Show("No se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            
-
         }
 
         private void frm_closing(object sender, FormClosingEventArgs e)

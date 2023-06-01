@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btningresar = new FontAwesome.Sharp.IconButton();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.SteelBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 280);
+            this.label2.Location = new System.Drawing.Point(31, 276);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 25);
+            this.label2.Size = new System.Drawing.Size(308, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "SISTEMA COMPRA Y VENTA";
             // 
@@ -68,7 +69,7 @@
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 157;
-            this.iconPictureBox1.Location = new System.Drawing.Point(109, 80);
+            this.iconPictureBox1.Location = new System.Drawing.Point(109, 67);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(157, 172);
             this.iconPictureBox1.TabIndex = 2;
@@ -76,34 +77,38 @@
             // 
             // txtdocumento
             // 
-            this.txtdocumento.Location = new System.Drawing.Point(433, 111);
+            this.txtdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdocumento.Location = new System.Drawing.Point(433, 156);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(299, 20);
+            this.txtdocumento.Size = new System.Drawing.Size(299, 23);
             this.txtdocumento.TabIndex = 3;
             // 
             // txtclave
             // 
+            this.txtclave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclave.Location = new System.Drawing.Point(433, 222);
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '*';
-            this.txtclave.Size = new System.Drawing.Size(299, 20);
+            this.txtclave.Size = new System.Drawing.Size(299, 23);
             this.txtclave.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(430, 206);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(430, 202);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Contraseña:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(432, 95);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(432, 136);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Nro. Documento:";
             // 
@@ -114,13 +119,15 @@
             this.btningresar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btningresar.FlatAppearance.BorderSize = 0;
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.btningresar.IconColor = System.Drawing.Color.White;
             this.btningresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btningresar.IconSize = 25;
-            this.btningresar.Location = new System.Drawing.Point(435, 314);
+            this.btningresar.IconSize = 26;
+            this.btningresar.Location = new System.Drawing.Point(433, 300);
             this.btningresar.Name = "btningresar";
+            this.btningresar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.btningresar.Size = new System.Drawing.Size(139, 31);
             this.btningresar.TabIndex = 7;
             this.btningresar.Text = "Ingresar";
@@ -135,13 +142,15 @@
             this.btncancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btncancelar.IconColor = System.Drawing.Color.White;
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btncancelar.IconSize = 25;
-            this.btncancelar.Location = new System.Drawing.Point(593, 314);
+            this.btncancelar.IconSize = 26;
+            this.btncancelar.Location = new System.Drawing.Point(593, 300);
             this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.btncancelar.Size = new System.Drawing.Size(139, 31);
             this.btncancelar.TabIndex = 8;
             this.btncancelar.Text = "Cancelar";
@@ -150,6 +159,16 @@
             this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(428, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(197, 26);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "INICIAR SESIÓN";
+            // 
             // Login
             // 
             this.AcceptButton = this.btningresar;
@@ -157,6 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(789, 389);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.label4);
@@ -187,5 +207,6 @@
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btningresar;
         private FontAwesome.Sharp.IconButton btncancelar;
+        private System.Windows.Forms.Label label5;
     }
 }
