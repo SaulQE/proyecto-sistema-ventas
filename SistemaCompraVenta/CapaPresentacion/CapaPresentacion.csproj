@@ -169,6 +169,12 @@
     <Compile Include="InicioFalso.Designer.cs">
       <DependentUpon>InicioFalso.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioO.Designer.cs">
+      <DependentUpon>InicioO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InicioFalso.resx">
       <DependentUpon>InicioFalso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioO.resx">
+      <DependentUpon>InicioO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -340,6 +349,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logocentro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CircleWhite_16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

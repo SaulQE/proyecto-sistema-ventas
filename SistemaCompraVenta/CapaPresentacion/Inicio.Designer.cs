@@ -51,7 +51,6 @@
             this.menumantenimiento = new System.Windows.Forms.Button();
             this.menuusuarios = new System.Windows.Forms.Button();
             this.menuLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Label();
@@ -63,8 +62,6 @@
             this.submenucompras.SuspendLayout();
             this.submenuventas.SuspendLayout();
             this.submenumantenimiento.SuspendLayout();
-            this.menuLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -515,7 +512,6 @@
             // 
             // menuLogo
             // 
-            this.menuLogo.Controls.Add(this.pictureBox1);
             this.menuLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuLogo.Location = new System.Drawing.Point(0, 0);
             this.menuLogo.Margin = new System.Windows.Forms.Padding(2);
@@ -523,20 +519,10 @@
             this.menuLogo.Size = new System.Drawing.Size(233, 154);
             this.menuLogo.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logocentro;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(923, 42);
@@ -548,7 +534,7 @@
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
-            this.lblusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.lblusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
             this.lblusuario.Location = new System.Drawing.Point(992, 42);
@@ -569,7 +555,7 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(250, 0);
             this.label3.Name = "label3";
@@ -579,7 +565,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(274, 34);
@@ -590,9 +576,9 @@
             // 
             // btnsalir
             // 
-            this.btnsalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.btnsalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.btnsalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnsalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(110)))), ((int)(((byte)(113)))));
+            this.btnsalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnsalir.IconColor = System.Drawing.Color.White;
@@ -620,7 +606,7 @@
             this.Controls.Add(this.menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MaximumSize = new System.Drawing.Size(1480, 900);
+            this.MaximumSize = new System.Drawing.Size(1480, 815);
             this.MinimumSize = new System.Drawing.Size(1480, 704);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -631,9 +617,6 @@
             this.submenucompras.ResumeLayout(false);
             this.submenuventas.ResumeLayout(false);
             this.submenumantenimiento.ResumeLayout(false);
-            this.menuLogo.ResumeLayout(false);
-            this.menuLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,7 +625,6 @@
         #endregion
 
         private System.Windows.Forms.Panel menu;
-        private System.Windows.Forms.Button menuusuarios;
         private System.Windows.Forms.Panel menuLogo;
         private System.Windows.Forms.Button menumantenimiento;
         private System.Windows.Forms.Panel submenumantenimiento;
@@ -668,8 +650,8 @@
         private System.Windows.Forms.Button submenureportecompras;
         private System.Windows.Forms.Label contenedor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnsalir;
+        private System.Windows.Forms.Button menuusuarios;
     }
 }

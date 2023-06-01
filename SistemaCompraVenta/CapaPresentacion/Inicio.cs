@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Modales;
+using DocumentFormat.OpenXml.Presentation;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace CapaPresentacion
     public partial class Inicio : Form
     {
         private static Usuario usuarioActual;
-        private static Button MenuActivo = null;
         private static Form FormularioActivo = null;
+        private Button botonActivo;
 
         public Inicio(Usuario objusuario = null)
         {
@@ -50,13 +51,6 @@ namespace CapaPresentacion
 
         private void AbrirFormulario(Button menu, Form formulario)
         {
-            //if (MenuActivo != null)
-          //  {
-           //   MenuActivo.BackColor = Color.FromArgb(33, 38, 43); 
-          //  }
-            // menu.BackColor = Color.FromArgb(22, 25, 28);
-           //  MenuActivo = menu;
-
 
             if (FormularioActivo != null)
                 FormularioActivo.Close();
@@ -86,11 +80,25 @@ namespace CapaPresentacion
         private void submenucategoria_Click(object sender, EventArgs e)
         {
             AbrirFormulario((Button)sender, new frmCategoria());
+            if(botonActivo != null)
+            {
+                DesmarcarBoton(botonActivo);
+            }
+
+            botonActivo = submenucategoria;
+            MarcarBoton(botonActivo);
         }
 
         private void submenuproductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario((Button)sender, new frmProducto());
+            if (botonActivo != null)
+            {
+                DesmarcarBoton(botonActivo);
+            }
+
+            botonActivo = submenuproductos;
+            MarcarBoton(botonActivo);
         }
 
         private void menuventas_Click(object sender, EventArgs e)
@@ -200,5 +208,19 @@ namespace CapaPresentacion
                 this.Close();
             }
         }
+
+        private void MarcarBoton(Button boton)
+        {
+            boton.BackColor = Color.FromArgb(56, 72, 84);
+            boton.ForeColor = Color.White;
+            boton.Enabled = false;
+        }
+        private void DesmarcarBoton(Button boton)
+        {
+            boton.BackColor = Color.FromArgb(107,110,113);
+            boton.Enabled = true;
+        }
+
+
     }
 }
