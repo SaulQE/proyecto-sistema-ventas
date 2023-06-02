@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Modales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,35 +24,43 @@ namespace CapaPresentacion
         private static Usuario usuarioActual;
         private static Form FormularioActivo = null;
         private Button botonActivo;
+        private List<string> permisosUsuario;
 
         public InicioO(Usuario objusuario = null)
         {
-            if (objusuario == null)
-                usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
-            else
+            if (objusuario != null)
                 usuarioActual = objusuario;
+              //usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
+            //else
+
 
             InitializeComponent();
         }
 
         private void InicioO_Load(object sender, EventArgs e)
         {
-            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.id_Usuario); //Aqui se comparte el id_Usuario para el metodo Listar y poder enlistar sus permisos
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.id_Usuario);
 
-            foreach (Button button in sidebar.Controls.OfType<Button>()) //
+            foreach (Control panel in sidebar.Controls) // Recorre los paneles dentro del panel sidebar
             {
-                bool encontrado = ListaPermisos.Any(m => m.Nom_Menu == button.Name); // m viene hacer cada elemento que tiene mi lista y esta validando haciendo un recorrido automatico
-
-                if (encontrado == false)
+                if (panel is Panel submenu)
                 {
-                    button.Visible = false;
+                    foreach (Button button in submenu.Controls.OfType<Button>()) // Recorre los botones dentro del panel secundario
+                    {
+                        bool encontrado = ListaPermisos.Any(m => m.Nom_Menu == button.Name);
+
+                        if (!encontrado)
+                        {
+                            button.Visible = false;
+                        }
+                    }
                 }
             }
+
             lblusuario.Text = usuarioActual.Nom_Completo;
         }
 
-
-        private void AbrirFormulario(Button menu, Form formulario)
+        private void AbrirFormulario(Button sidebar, Form formulario)
         {
 
             if (FormularioActivo != null)
@@ -118,7 +127,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnMantenimiento_Click(object sender, EventArgs e)
+        private void menumantenimiento_Click(object sender, EventArgs e)
         {
             MantenimientoTimer.Start();
         }
@@ -204,9 +213,78 @@ namespace CapaPresentacion
             ReportesTimer.Start();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void menusuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(btnUsuarios, new frmUsuarios());
+            AbrirFormulario(menusuarios, new frmUsuarios());
+        }
+
+        private void submenucategoria_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenucategoria, new frmCategoria());
+        }
+
+        private void submenuproducto_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenuproducto, new frmProducto());
+        }
+
+        private void submenunegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenunegocio, new frmNegocio());
+        }
+
+        private void submenuregistrarventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenuregistrarventa, new frmVentas(usuarioActual));
+        }
+
+        private void submenuverdetalleventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenuverdetalleventa, new frmDetalleVenta());
+        }
+
+        private void submenuregistrarcompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenuregistrarcompra, new frmCompras(usuarioActual));
+        }
+
+        private void submenuverdetallecompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenuverdetallecompra, new frmDetalleCompra());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuclientes, new frmClientes());
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuproveedores, new frmProveedores());
+        }
+
+        private void submenureportecompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenureportecompras, new frmReporteCompras());
+        }
+
+        private void submenureporteventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(submenureporteventas, new frmReporteVentas());
+        }
+
+        private void menuacercade_Click(object sender, EventArgs e)
+        {
+            mdAcercade md = new mdAcercade();
+            md.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

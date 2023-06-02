@@ -362,5 +362,17 @@
   <ItemGroup>
     <None Include="Resources\CircleWhite_16px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Exit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono_MenuWhite_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuWhite_26.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

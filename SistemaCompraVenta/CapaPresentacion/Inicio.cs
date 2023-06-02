@@ -23,10 +23,11 @@ namespace CapaPresentacion
 
         public Inicio(Usuario objusuario = null)
         {
-            if (objusuario == null)
-                usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
-            else
+            if (objusuario != null)
                 usuarioActual = objusuario;
+              //usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
+            //else
+
 
             InitializeComponent();
             personalizardiseño();

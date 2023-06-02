@@ -85,7 +85,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Margin = new System.Windows.Forms.Padding(2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(250, 776);
+            this.menu.Size = new System.Drawing.Size(250, 1061);
             this.menu.TabIndex = 2;
             // 
             // menuacercade
@@ -96,7 +96,7 @@
             this.menuacercade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menuacercade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menuacercade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuacercade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuacercade.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuacercade.ForeColor = System.Drawing.Color.White;
             this.menuacercade.Image = global::CapaPresentacion.Properties.Resources.acercade;
             this.menuacercade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,7 +104,7 @@
             this.menuacercade.Margin = new System.Windows.Forms.Padding(2);
             this.menuacercade.Name = "menuacercade";
             this.menuacercade.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menuacercade.Size = new System.Drawing.Size(233, 46);
+            this.menuacercade.Size = new System.Drawing.Size(250, 46);
             this.menuacercade.TabIndex = 20;
             this.menuacercade.Text = "            Acerca de";
             this.menuacercade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,7 +120,7 @@
             this.submenureportes.Location = new System.Drawing.Point(0, 763);
             this.submenureportes.Margin = new System.Windows.Forms.Padding(2);
             this.submenureportes.Name = "submenureportes";
-            this.submenureportes.Size = new System.Drawing.Size(233, 83);
+            this.submenureportes.Size = new System.Drawing.Size(250, 83);
             this.submenureportes.TabIndex = 19;
             // 
             // submenureporteventas
@@ -131,13 +131,13 @@
             this.submenureporteventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenureporteventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenureporteventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenureporteventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenureporteventas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenureporteventas.ForeColor = System.Drawing.Color.White;
             this.submenureporteventas.Location = new System.Drawing.Point(0, 39);
             this.submenureporteventas.Margin = new System.Windows.Forms.Padding(2);
             this.submenureporteventas.Name = "submenureporteventas";
             this.submenureporteventas.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenureporteventas.Size = new System.Drawing.Size(233, 39);
+            this.submenureporteventas.Size = new System.Drawing.Size(250, 39);
             this.submenureporteventas.TabIndex = 1;
             this.submenureporteventas.Text = "Reporte Ventas";
             this.submenureporteventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,13 +152,13 @@
             this.submenureportecompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenureportecompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenureportecompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenureportecompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenureportecompras.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenureportecompras.ForeColor = System.Drawing.Color.White;
             this.submenureportecompras.Location = new System.Drawing.Point(0, 0);
             this.submenureportecompras.Margin = new System.Windows.Forms.Padding(2);
             this.submenureportecompras.Name = "submenureportecompras";
             this.submenureportecompras.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenureportecompras.Size = new System.Drawing.Size(233, 39);
+            this.submenureportecompras.Size = new System.Drawing.Size(250, 39);
             this.submenureportecompras.TabIndex = 0;
             this.submenureportecompras.Text = "Reporte Compras";
             this.submenureportecompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             this.menureportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menureportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menureportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menureportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menureportes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menureportes.ForeColor = System.Drawing.Color.White;
             this.menureportes.Image = global::CapaPresentacion.Properties.Resources.reportes;
             this.menureportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +181,7 @@
             this.menureportes.Margin = new System.Windows.Forms.Padding(2);
             this.menureportes.Name = "menureportes";
             this.menureportes.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menureportes.Size = new System.Drawing.Size(233, 46);
+            this.menureportes.Size = new System.Drawing.Size(250, 46);
             this.menureportes.TabIndex = 18;
             this.menureportes.Text = "            Reportes";
             this.menureportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -196,7 +196,7 @@
             this.menuproveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menuproveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menuproveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuproveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuproveedores.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuproveedores.ForeColor = System.Drawing.Color.White;
             this.menuproveedores.Image = global::CapaPresentacion.Properties.Resources.proveedores;
             this.menuproveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +204,7 @@
             this.menuproveedores.Margin = new System.Windows.Forms.Padding(2);
             this.menuproveedores.Name = "menuproveedores";
             this.menuproveedores.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menuproveedores.Size = new System.Drawing.Size(233, 46);
+            this.menuproveedores.Size = new System.Drawing.Size(250, 46);
             this.menuproveedores.TabIndex = 17;
             this.menuproveedores.Text = "            Proveedores";
             this.menuproveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,7 +219,7 @@
             this.menuclientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menuclientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menuclientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuclientes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuclientes.ForeColor = System.Drawing.Color.White;
             this.menuclientes.Image = global::CapaPresentacion.Properties.Resources.clientes;
             this.menuclientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +227,7 @@
             this.menuclientes.Margin = new System.Windows.Forms.Padding(2);
             this.menuclientes.Name = "menuclientes";
             this.menuclientes.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menuclientes.Size = new System.Drawing.Size(233, 46);
+            this.menuclientes.Size = new System.Drawing.Size(250, 46);
             this.menuclientes.TabIndex = 16;
             this.menuclientes.Text = "            Clientes";
             this.menuclientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,7 +243,7 @@
             this.submenucompras.Location = new System.Drawing.Point(0, 542);
             this.submenucompras.Margin = new System.Windows.Forms.Padding(2);
             this.submenucompras.Name = "submenucompras";
-            this.submenucompras.Size = new System.Drawing.Size(233, 83);
+            this.submenucompras.Size = new System.Drawing.Size(250, 83);
             this.submenucompras.TabIndex = 13;
             // 
             // submenuverdetallecompra
@@ -254,13 +254,13 @@
             this.submenuverdetallecompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenuverdetallecompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenuverdetallecompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenuverdetallecompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenuverdetallecompra.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenuverdetallecompra.ForeColor = System.Drawing.Color.White;
             this.submenuverdetallecompra.Location = new System.Drawing.Point(0, 39);
             this.submenuverdetallecompra.Margin = new System.Windows.Forms.Padding(2);
             this.submenuverdetallecompra.Name = "submenuverdetallecompra";
             this.submenuverdetallecompra.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenuverdetallecompra.Size = new System.Drawing.Size(233, 39);
+            this.submenuverdetallecompra.Size = new System.Drawing.Size(250, 39);
             this.submenuverdetallecompra.TabIndex = 1;
             this.submenuverdetallecompra.Text = "Ver detalle";
             this.submenuverdetallecompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,13 +275,13 @@
             this.submenuregistrarcompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenuregistrarcompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenuregistrarcompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenuregistrarcompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenuregistrarcompra.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenuregistrarcompra.ForeColor = System.Drawing.Color.White;
             this.submenuregistrarcompra.Location = new System.Drawing.Point(0, 0);
             this.submenuregistrarcompra.Margin = new System.Windows.Forms.Padding(2);
             this.submenuregistrarcompra.Name = "submenuregistrarcompra";
             this.submenuregistrarcompra.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenuregistrarcompra.Size = new System.Drawing.Size(233, 39);
+            this.submenuregistrarcompra.Size = new System.Drawing.Size(250, 39);
             this.submenuregistrarcompra.TabIndex = 0;
             this.submenuregistrarcompra.Text = "Registrar";
             this.submenuregistrarcompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,7 +296,7 @@
             this.menucompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menucompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menucompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menucompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menucompras.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menucompras.ForeColor = System.Drawing.Color.White;
             this.menucompras.Image = global::CapaPresentacion.Properties.Resources.compras;
             this.menucompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,7 +304,7 @@
             this.menucompras.Margin = new System.Windows.Forms.Padding(2);
             this.menucompras.Name = "menucompras";
             this.menucompras.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menucompras.Size = new System.Drawing.Size(233, 46);
+            this.menucompras.Size = new System.Drawing.Size(250, 46);
             this.menucompras.TabIndex = 12;
             this.menucompras.Text = "            Compras";
             this.menucompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,7 +320,7 @@
             this.submenuventas.Location = new System.Drawing.Point(0, 413);
             this.submenuventas.Margin = new System.Windows.Forms.Padding(2);
             this.submenuventas.Name = "submenuventas";
-            this.submenuventas.Size = new System.Drawing.Size(233, 83);
+            this.submenuventas.Size = new System.Drawing.Size(250, 83);
             this.submenuventas.TabIndex = 11;
             // 
             // submenuverdetalleventa
@@ -331,13 +331,13 @@
             this.submenuverdetalleventa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenuverdetalleventa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenuverdetalleventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenuverdetalleventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenuverdetalleventa.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenuverdetalleventa.ForeColor = System.Drawing.Color.White;
             this.submenuverdetalleventa.Location = new System.Drawing.Point(0, 39);
             this.submenuverdetalleventa.Margin = new System.Windows.Forms.Padding(2);
             this.submenuverdetalleventa.Name = "submenuverdetalleventa";
             this.submenuverdetalleventa.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenuverdetalleventa.Size = new System.Drawing.Size(233, 39);
+            this.submenuverdetalleventa.Size = new System.Drawing.Size(250, 39);
             this.submenuverdetalleventa.TabIndex = 1;
             this.submenuverdetalleventa.Text = "Ver detalle";
             this.submenuverdetalleventa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,13 +352,13 @@
             this.submenuregistrarventa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenuregistrarventa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenuregistrarventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenuregistrarventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenuregistrarventa.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenuregistrarventa.ForeColor = System.Drawing.Color.White;
             this.submenuregistrarventa.Location = new System.Drawing.Point(0, 0);
             this.submenuregistrarventa.Margin = new System.Windows.Forms.Padding(2);
             this.submenuregistrarventa.Name = "submenuregistrarventa";
             this.submenuregistrarventa.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenuregistrarventa.Size = new System.Drawing.Size(233, 39);
+            this.submenuregistrarventa.Size = new System.Drawing.Size(250, 39);
             this.submenuregistrarventa.TabIndex = 0;
             this.submenuregistrarventa.Text = "Registrar";
             this.submenuregistrarventa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,7 +373,7 @@
             this.menuventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menuventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menuventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuventas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuventas.ForeColor = System.Drawing.Color.White;
             this.menuventas.Image = global::CapaPresentacion.Properties.Resources.ventas;
             this.menuventas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -381,7 +381,7 @@
             this.menuventas.Margin = new System.Windows.Forms.Padding(2);
             this.menuventas.Name = "menuventas";
             this.menuventas.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menuventas.Size = new System.Drawing.Size(233, 46);
+            this.menuventas.Size = new System.Drawing.Size(250, 46);
             this.menuventas.TabIndex = 10;
             this.menuventas.Text = "            Ventas";
             this.menuventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -398,7 +398,7 @@
             this.submenumantenimiento.Location = new System.Drawing.Point(0, 246);
             this.submenumantenimiento.Margin = new System.Windows.Forms.Padding(2);
             this.submenumantenimiento.Name = "submenumantenimiento";
-            this.submenumantenimiento.Size = new System.Drawing.Size(233, 121);
+            this.submenumantenimiento.Size = new System.Drawing.Size(250, 121);
             this.submenumantenimiento.TabIndex = 9;
             // 
             // submenunegocio
@@ -409,13 +409,13 @@
             this.submenunegocio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenunegocio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenunegocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenunegocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenunegocio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenunegocio.ForeColor = System.Drawing.Color.White;
             this.submenunegocio.Location = new System.Drawing.Point(0, 78);
             this.submenunegocio.Margin = new System.Windows.Forms.Padding(2);
             this.submenunegocio.Name = "submenunegocio";
             this.submenunegocio.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenunegocio.Size = new System.Drawing.Size(233, 39);
+            this.submenunegocio.Size = new System.Drawing.Size(250, 39);
             this.submenunegocio.TabIndex = 2;
             this.submenunegocio.Text = "Negocio";
             this.submenunegocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,13 +430,13 @@
             this.submenuproductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenuproductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenuproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenuproductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenuproductos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenuproductos.ForeColor = System.Drawing.Color.White;
             this.submenuproductos.Location = new System.Drawing.Point(0, 39);
             this.submenuproductos.Margin = new System.Windows.Forms.Padding(2);
             this.submenuproductos.Name = "submenuproductos";
             this.submenuproductos.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenuproductos.Size = new System.Drawing.Size(233, 39);
+            this.submenuproductos.Size = new System.Drawing.Size(250, 39);
             this.submenuproductos.TabIndex = 1;
             this.submenuproductos.Text = "Productos";
             this.submenuproductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -451,13 +451,13 @@
             this.submenucategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.submenucategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.submenucategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenucategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submenucategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submenucategoria.ForeColor = System.Drawing.Color.White;
             this.submenucategoria.Location = new System.Drawing.Point(0, 0);
             this.submenucategoria.Margin = new System.Windows.Forms.Padding(2);
             this.submenucategoria.Name = "submenucategoria";
             this.submenucategoria.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.submenucategoria.Size = new System.Drawing.Size(233, 39);
+            this.submenucategoria.Size = new System.Drawing.Size(250, 39);
             this.submenucategoria.TabIndex = 0;
             this.submenucategoria.Text = "Categoría";
             this.submenucategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -472,7 +472,7 @@
             this.menumantenimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menumantenimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menumantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menumantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menumantenimiento.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menumantenimiento.ForeColor = System.Drawing.Color.White;
             this.menumantenimiento.Image = global::CapaPresentacion.Properties.Resources.mantenimiento;
             this.menumantenimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -480,7 +480,7 @@
             this.menumantenimiento.Margin = new System.Windows.Forms.Padding(2);
             this.menumantenimiento.Name = "menumantenimiento";
             this.menumantenimiento.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menumantenimiento.Size = new System.Drawing.Size(233, 46);
+            this.menumantenimiento.Size = new System.Drawing.Size(250, 46);
             this.menumantenimiento.TabIndex = 6;
             this.menumantenimiento.Text = "            Mantenimiento";
             this.menumantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -495,7 +495,7 @@
             this.menuusuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.menuusuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.menuusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuusuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuusuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuusuarios.ForeColor = System.Drawing.Color.White;
             this.menuusuarios.Image = global::CapaPresentacion.Properties.Resources.userswhite;
             this.menuusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -503,7 +503,7 @@
             this.menuusuarios.Margin = new System.Windows.Forms.Padding(2);
             this.menuusuarios.Name = "menuusuarios";
             this.menuusuarios.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.menuusuarios.Size = new System.Drawing.Size(233, 46);
+            this.menuusuarios.Size = new System.Drawing.Size(250, 46);
             this.menuusuarios.TabIndex = 1;
             this.menuusuarios.Text = "            Usuarios";
             this.menuusuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,7 +516,7 @@
             this.menuLogo.Location = new System.Drawing.Point(0, 0);
             this.menuLogo.Margin = new System.Windows.Forms.Padding(2);
             this.menuLogo.Name = "menuLogo";
-            this.menuLogo.Size = new System.Drawing.Size(233, 154);
+            this.menuLogo.Size = new System.Drawing.Size(250, 154);
             this.menuLogo.TabIndex = 0;
             // 
             // label1
@@ -548,7 +548,7 @@
             // 
             this.contenedor.BackColor = System.Drawing.Color.White;
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.contenedor.Location = new System.Drawing.Point(250, 108);
+            this.contenedor.Location = new System.Drawing.Point(250, 393);
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(1214, 668);
             this.contenedor.TabIndex = 3;
@@ -596,7 +596,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1464, 776);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1464, 1061);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -606,8 +607,8 @@
             this.Controls.Add(this.menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MaximumSize = new System.Drawing.Size(1480, 815);
-            this.MinimumSize = new System.Drawing.Size(1480, 704);
+            this.MaximumSize = new System.Drawing.Size(1480, 1100);
+            this.MinimumSize = new System.Drawing.Size(1480, 816);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DiseñoFormulario";
