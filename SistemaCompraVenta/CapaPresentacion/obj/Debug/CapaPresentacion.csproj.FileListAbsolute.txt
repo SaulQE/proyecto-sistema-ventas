@@ -128,4 +128,3 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteCompras.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteVentas.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdAcercade.resources
-C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.InicioO.resources

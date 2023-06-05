@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,6 +73,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -84,6 +85,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(33, 99);
@@ -95,6 +97,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(33, 157);
@@ -106,6 +109,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(33, 217);
@@ -117,6 +121,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(33, 276);
@@ -128,6 +133,7 @@
             // 
             // txtdocumento
             // 
+            this.txtdocumento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtdocumento.Location = new System.Drawing.Point(36, 118);
             this.txtdocumento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtdocumento.Name = "txtdocumento";
@@ -136,6 +142,7 @@
             // 
             // txtnombrecompleto
             // 
+            this.txtnombrecompleto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtnombrecompleto.Location = new System.Drawing.Point(36, 175);
             this.txtnombrecompleto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtnombrecompleto.Name = "txtnombrecompleto";
@@ -144,6 +151,7 @@
             // 
             // txtcorreo
             // 
+            this.txtcorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtcorreo.Location = new System.Drawing.Point(36, 235);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtcorreo.Name = "txtcorreo";
@@ -152,6 +160,7 @@
             // 
             // txtclave
             // 
+            this.txtclave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtclave.Location = new System.Drawing.Point(36, 294);
             this.txtclave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtclave.Name = "txtclave";
@@ -161,6 +170,7 @@
             // 
             // txtconfirmarclave
             // 
+            this.txtconfirmarclave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtconfirmarclave.Location = new System.Drawing.Point(36, 351);
             this.txtconfirmarclave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtconfirmarclave.Name = "txtconfirmarclave";
@@ -170,6 +180,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(33, 332);
@@ -181,6 +192,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(33, 388);
@@ -192,6 +204,7 @@
             // 
             // cborol
             // 
+            this.cborol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cborol.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cborol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cborol.FormattingEnabled = true;
@@ -203,6 +216,7 @@
             // 
             // cboestado
             // 
+            this.cboestado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboestado.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.FormattingEnabled = true;
@@ -214,6 +228,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(33, 446);
@@ -225,6 +240,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,16 +254,17 @@
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
+            this.dgvdata.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvdata.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
@@ -265,9 +282,9 @@
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(838, 579);
             this.dgvdata.TabIndex = 19;
@@ -346,6 +363,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -360,6 +378,7 @@
             // 
             // txtid
             // 
+            this.txtid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtid.Location = new System.Drawing.Point(286, 88);
             this.txtid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtid.Name = "txtid";
@@ -370,6 +389,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(689, 39);
@@ -381,6 +401,7 @@
             // 
             // cbobusqueda
             // 
+            this.cbobusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(767, 36);
@@ -391,6 +412,7 @@
             // 
             // txtbusqueda
             // 
+            this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbusqueda.Location = new System.Drawing.Point(900, 36);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtbusqueda.Name = "txtbusqueda";
@@ -399,6 +421,7 @@
             // 
             // btnlimpiarbuscador
             // 
+            this.btnlimpiarbuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnlimpiarbuscador.BackColor = System.Drawing.Color.White;
             this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -419,6 +442,7 @@
             // 
             // btnbuscar
             // 
+            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnbuscar.BackColor = System.Drawing.Color.White;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -439,6 +463,7 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btneliminar.BackColor = System.Drawing.Color.Firebrick;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -461,6 +486,7 @@
             // 
             // btnlimpiar
             // 
+            this.btnlimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnlimpiar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -483,6 +509,7 @@
             // 
             // btnguardar
             // 
+            this.btnguardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnguardar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -505,6 +532,7 @@
             // 
             // txtindice
             // 
+            this.txtindice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtindice.Location = new System.Drawing.Point(250, 88);
             this.txtindice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtindice.Name = "txtindice";
@@ -517,7 +545,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1213, 666);
             this.Controls.Add(this.txtindice);
             this.Controls.Add(this.btnlimpiarbuscador);

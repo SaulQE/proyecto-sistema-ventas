@@ -19,14 +19,17 @@ namespace CapaPresentacion
     {
         private static Usuario usuarioActual;
         private static Form FormularioActivo = null;
-        private Button botonActivo;
 
         public Inicio(Usuario objusuario = null)
         {
-            if (objusuario != null)
-                usuarioActual = objusuario;
-              //usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
+            //if (objusuario != null)
+            //    usuarioActual = objusuario;
+            //usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
             //else
+            if (objusuario == null)
+                usuarioActual = new Usuario() { Nom_Completo = "ADMIN PREDEFINIDO", id_Usuario = 1 };
+            else
+                usuarioActual = objusuario;
 
 
             InitializeComponent();
@@ -52,7 +55,6 @@ namespace CapaPresentacion
 
         private void AbrirFormulario(Button menu, Form formulario)
         {
-
             if (FormularioActivo != null)
                 FormularioActivo.Close();
 
@@ -81,25 +83,11 @@ namespace CapaPresentacion
         private void submenucategoria_Click(object sender, EventArgs e)
         {
             AbrirFormulario((Button)sender, new frmCategoria());
-            if(botonActivo != null)
-            {
-                DesmarcarBoton(botonActivo);
-            }
-
-            botonActivo = submenucategoria;
-            MarcarBoton(botonActivo);
         }
 
         private void submenuproductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario((Button)sender, new frmProducto());
-            if (botonActivo != null)
-            {
-                DesmarcarBoton(botonActivo);
-            }
-
-            botonActivo = submenuproductos;
-            MarcarBoton(botonActivo);
         }
 
         private void menuventas_Click(object sender, EventArgs e)
@@ -141,7 +129,6 @@ namespace CapaPresentacion
         {
             AbrirFormulario((Button)sender, new frmProveedores());
         }
-
 
 
         private void personalizardiseño()
@@ -210,18 +197,9 @@ namespace CapaPresentacion
             }
         }
 
-        private void MarcarBoton(Button boton)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            boton.BackColor = Color.FromArgb(56, 72, 84);
-            boton.ForeColor = Color.White;
-            boton.Enabled = false;
+            contenedor.Controls.Clear();
         }
-        private void DesmarcarBoton(Button boton)
-        {
-            boton.BackColor = Color.FromArgb(107,110,113);
-            boton.Enabled = true;
-        }
-
-
     }
 }

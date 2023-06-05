@@ -53,6 +53,5 @@ namespace CapaPresentacion
             txtclave.Text = "";
             this.Show();
         }
-
     }
 }

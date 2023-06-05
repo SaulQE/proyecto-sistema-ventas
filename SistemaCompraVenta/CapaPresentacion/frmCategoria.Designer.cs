@@ -58,6 +58,7 @@
             // 
             // txtindice
             // 
+            this.txtindice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtindice.Location = new System.Drawing.Point(248, 88);
             this.txtindice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtindice.Name = "txtindice";
@@ -68,6 +69,7 @@
             // 
             // btnlimpiarbuscador
             // 
+            this.btnlimpiarbuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnlimpiarbuscador.BackColor = System.Drawing.Color.White;
             this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -88,6 +90,7 @@
             // 
             // btnbuscar
             // 
+            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnbuscar.BackColor = System.Drawing.Color.White;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -108,6 +111,7 @@
             // 
             // txtbusqueda
             // 
+            this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbusqueda.Location = new System.Drawing.Point(898, 36);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtbusqueda.Name = "txtbusqueda";
@@ -116,6 +120,7 @@
             // 
             // cbobusqueda
             // 
+            this.cbobusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(765, 36);
@@ -126,6 +131,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(687, 39);
@@ -137,6 +143,7 @@
             // 
             // txtid
             // 
+            this.txtid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtid.Location = new System.Drawing.Point(284, 88);
             this.txtid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtid.Name = "txtid";
@@ -147,6 +154,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,6 +169,7 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btneliminar.BackColor = System.Drawing.Color.Firebrick;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -183,6 +192,7 @@
             // 
             // btnlimpiar
             // 
+            this.btnlimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnlimpiar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -206,6 +216,8 @@
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
+            this.dgvdata.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvdata.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,6 +285,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,6 +298,7 @@
             // 
             // btnguardar
             // 
+            this.btnguardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnguardar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -307,6 +321,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(31, 158);
@@ -318,6 +333,7 @@
             // 
             // cboestado
             // 
+            this.cboestado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.FormattingEnabled = true;
             this.cboestado.Location = new System.Drawing.Point(34, 176);
@@ -328,6 +344,7 @@
             // 
             // txtdescripcion
             // 
+            this.txtdescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtdescripcion.Location = new System.Drawing.Point(34, 118);
             this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtdescripcion.Name = "txtdescripcion";
@@ -336,6 +353,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(31, 99);
@@ -347,9 +365,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -361,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1213, 666);
             this.Controls.Add(this.txtindice);
             this.Controls.Add(this.btnlimpiarbuscador);

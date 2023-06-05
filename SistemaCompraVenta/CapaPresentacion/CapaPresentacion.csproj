@@ -163,18 +163,6 @@
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioFalso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InicioFalso.Designer.cs">
-      <DependentUpon>InicioFalso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InicioO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InicioO.Designer.cs">
-      <DependentUpon>InicioO.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,12 +242,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InicioFalso.resx">
-      <DependentUpon>InicioFalso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InicioO.resx">
-      <DependentUpon>InicioO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -373,6 +355,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MenuWhite_26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeWhite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IniciarSesion1080x700.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 35.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login433x501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelLogin_1080x700.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoxLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoxLogin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoxLogin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

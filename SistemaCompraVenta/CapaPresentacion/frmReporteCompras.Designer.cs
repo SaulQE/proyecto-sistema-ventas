@@ -65,6 +65,7 @@
             // 
             // txtfechainicio
             // 
+            this.txtfechainicio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtfechainicio.CustomFormat = "dd/MM/yyyy";
             this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtfechainicio.Location = new System.Drawing.Point(114, 52);
@@ -74,6 +75,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
@@ -82,6 +84,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,6 +96,7 @@
             // 
             // txtfechafin
             // 
+            this.txtfechafin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtfechafin.CustomFormat = "dd/MM/yyyy";
             this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtfechafin.Location = new System.Drawing.Point(334, 52);
@@ -102,6 +106,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(31, 54);
             this.label3.Name = "label3";
@@ -111,6 +116,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(263, 54);
             this.label4.Name = "label4";
@@ -120,6 +126,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(489, 54);
             this.label5.Name = "label5";
@@ -129,6 +136,7 @@
             // 
             // cboproveedor
             // 
+            this.cboproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboproveedor.FormattingEnabled = true;
             this.cboproveedor.Location = new System.Drawing.Point(562, 51);
@@ -139,6 +147,7 @@
             // 
             // btnbuscarproveedor
             // 
+            this.btnbuscarproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnbuscarproveedor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnbuscarproveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscarproveedor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -162,6 +171,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(13, 102);
             this.label6.Name = "label6";
@@ -171,6 +181,7 @@
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
+            this.dgvdata.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvdata.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -301,6 +312,7 @@
             // 
             // btnexportar
             // 
+            this.btnexportar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnexportar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnexportar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnexportar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -323,6 +335,7 @@
             // 
             // btnlimpiarbuscador
             // 
+            this.btnlimpiarbuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnlimpiarbuscador.BackColor = System.Drawing.Color.White;
             this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -343,6 +356,7 @@
             // 
             // btnbuscar
             // 
+            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnbuscar.BackColor = System.Drawing.Color.White;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -363,6 +377,7 @@
             // 
             // txtbusqueda
             // 
+            this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbusqueda.Location = new System.Drawing.Point(917, 123);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtbusqueda.Name = "txtbusqueda";
@@ -371,6 +386,7 @@
             // 
             // cbobusqueda
             // 
+            this.cbobusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(751, 123);
@@ -383,6 +399,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1213, 666);
             this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.btnlimpiarbuscador);

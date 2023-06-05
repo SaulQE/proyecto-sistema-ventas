@@ -332,6 +332,10 @@ namespace CapaPresentacion
                 if (pagacon < total)
                 {
                     txtcambio.Text = "0.00";
+                    if(pagacon < total)
+                    {
+                        MessageBox.Show("Ingrese un monto valido para la venta","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -442,5 +446,6 @@ namespace CapaPresentacion
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
+
     }
 }

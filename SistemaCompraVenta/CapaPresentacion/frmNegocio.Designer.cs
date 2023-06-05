@@ -47,10 +47,11 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 54);
+            this.label9.Location = new System.Drawing.Point(231, 76);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(193, 29);
@@ -59,11 +60,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(199, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(790, 666);
@@ -71,6 +72,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnguardar);
             this.groupBox1.Controls.Add(this.txtdireccion);
@@ -82,7 +84,7 @@
             this.groupBox1.Controls.Add(this.btnsubir);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.piclogo);
-            this.groupBox1.Location = new System.Drawing.Point(29, 109);
+            this.groupBox1.Location = new System.Drawing.Point(236, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(710, 381);
             this.groupBox1.TabIndex = 21;
@@ -99,7 +101,7 @@
             this.btnguardar.IconColor = System.Drawing.Color.Black;
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 19;
-            this.btnguardar.Location = new System.Drawing.Point(289, 230);
+            this.btnguardar.Location = new System.Drawing.Point(297, 250);
             this.btnguardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(361, 32);
@@ -113,7 +115,7 @@
             // txtdireccion
             // 
             this.txtdireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdireccion.Location = new System.Drawing.Point(289, 182);
+            this.txtdireccion.Location = new System.Drawing.Point(297, 202);
             this.txtdireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(361, 23);
@@ -122,7 +124,7 @@
             // txtruc
             // 
             this.txtruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtruc.Location = new System.Drawing.Point(289, 122);
+            this.txtruc.Location = new System.Drawing.Point(297, 142);
             this.txtruc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtruc.Name = "txtruc";
             this.txtruc.Size = new System.Drawing.Size(361, 23);
@@ -131,7 +133,7 @@
             // txtnombre
             // 
             this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(289, 65);
+            this.txtnombre.Location = new System.Drawing.Point(297, 85);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(361, 23);
@@ -141,7 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(286, 164);
+            this.label4.Location = new System.Drawing.Point(294, 184);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 15);
@@ -152,7 +154,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(286, 104);
+            this.label3.Location = new System.Drawing.Point(294, 124);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
@@ -163,7 +165,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(286, 46);
+            this.label5.Location = new System.Drawing.Point(294, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 15);
@@ -181,7 +183,7 @@
             this.btnsubir.IconColor = System.Drawing.Color.Black;
             this.btnsubir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnsubir.IconSize = 17;
-            this.btnsubir.Location = new System.Drawing.Point(49, 234);
+            this.btnsubir.Location = new System.Drawing.Point(57, 254);
             this.btnsubir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnsubir.Name = "btnsubir";
             this.btnsubir.Size = new System.Drawing.Size(176, 25);
@@ -195,7 +197,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 46);
+            this.label2.Location = new System.Drawing.Point(54, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 1;
@@ -204,7 +206,7 @@
             // piclogo
             // 
             this.piclogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.piclogo.Location = new System.Drawing.Point(49, 64);
+            this.piclogo.Location = new System.Drawing.Point(57, 84);
             this.piclogo.Name = "piclogo";
             this.piclogo.Size = new System.Drawing.Size(176, 164);
             this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1213, 666);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
