@@ -8,8 +8,8 @@ namespace CapaPresentacion.Utilidades
 {
     public class OpcionCombo
     {
-        public string Texto { get; set; }
-        public object Valor { get; set; }
+        public string Texto { get; set; } // Propiedad que representa el texto descriptivo de la opción del combo
+        public object Valor { get; set; } // Propiedad que representa el valor asociado a la opción del combo
 
     }
 }

@@ -29,7 +29,7 @@ namespace CapaDatos
 
 
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); //Se agrega el evento ToString para convertir a cadena de texto
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.Parameters.AddWithValue("id_Usuario", id_Usuario); // Aqui se remplaza el @id_usuario por el valor del id_Usuario
                     cmd.CommandType = CommandType.Text;
 

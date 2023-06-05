@@ -20,7 +20,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    StringBuilder query = new StringBuilder(); // me ayuda hacer saltos de linea
+                    StringBuilder query = new StringBuilder();
                     query.AppendLine("select id_Rol,Descripcion from ROL");
 
 

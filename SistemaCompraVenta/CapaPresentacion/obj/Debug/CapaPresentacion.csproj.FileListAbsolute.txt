@@ -109,7 +109,6 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmReportes.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuarios.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.frmVentas.resources
-C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.InicioFalso.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProducto.resources
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
