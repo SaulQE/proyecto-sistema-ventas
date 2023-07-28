@@ -22,11 +22,11 @@ namespace CapaPresentacion
 
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" }); // Esto es para mi cbo Estado
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" }); 
             cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
-            cboestado.DisplayMember = "Texto"; //aca mostrara el dato que tiene de nombre Texto
-            cboestado.ValueMember = "Valor"; //no mostraria y manejaria como valor interno, y sera aquel dato con nombre Valor
-            cboestado.SelectedIndex = 0; //Para siempre selecionar el primero
+            cboestado.DisplayMember = "Texto"; 
+            cboestado.ValueMember = "Valor"; 
+            cboestado.SelectedIndex = 0; 
 
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
@@ -44,15 +44,15 @@ namespace CapaPresentacion
 
 
 
-            List<Categoria> listaCategoria = new CN_Categoria().Listar(); // Aqui obtengo la lista de todo las categorias
+            List<Categoria> listaCategoria = new CN_Categoria().Listar(); 
 
-            foreach (Categoria item in listaCategoria) // voy a recorrer listaUsuario, y el item esta comteniendo cada clase usuario que esta dentro de la listaUsuario
+            foreach (Categoria item in listaCategoria) 
             {
 
-                dgvdata.Rows.Add(new object[] {"",item.id_Categoria, // Envio todos mi valores a mi dgvData, como el txtid, 
+                dgvdata.Rows.Add(new object[] {"",item.id_Categoria, 
                 item.Descripcion,
-                item.Estado == true ? 1 : 0, // Estamos diciendo que si es true me muestre 1, en lo contrario muestre 0
-                item.Estado == true ? "Activo" : "No Activo" // 1era columna viene ser los valores y 2da el texto del estado
+                item.Estado == true ? 1 : 0, 
+                item.Estado == true ? "Activo" : "No Activo" 
                 });
             }
         }
@@ -61,9 +61,9 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
 
-            Categoria objcategoria = new Categoria() // Creo objeto de la clase Categoria
+            Categoria objcategoria = new Categoria() 
             {
-                id_Categoria = Convert.ToInt32(txtid.Text),  // Llenamos los atributos de la clase con los campos de texto
+                id_Categoria = Convert.ToInt32(txtid.Text),  
                 Descripcion = txtdescripcion.Text,
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
@@ -71,7 +71,7 @@ namespace CapaPresentacion
 
             if (objcategoria.id_Categoria == 0)
             {
-                int idgenerado = new CN_Categoria().Registrar(objcategoria, out mensaje); // Estamos pasando los parametros que requiere el metodo Registrar y como respuesta obtenemos el idgenerado
+                int idgenerado = new CN_Categoria().Registrar(objcategoria, out mensaje); 
 
                 if (idgenerado != 0)
                 {
@@ -150,15 +150,15 @@ namespace CapaPresentacion
                 {
 
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["id"].Value.ToString(); //
+                    txtid.Text = dgvdata.Rows[indice].Cells["id"].Value.ToString(); 
                     txtdescripcion.Text = dgvdata.Rows[indice].Cells["Descripcion"].Value.ToString();
 
-                    foreach (OpcionCombo oc in cboestado.Items) // lee todas las oc (las clases) que tengo dentro de cbrestado
+                    foreach (OpcionCombo oc in cboestado.Items) 
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
                         {
-                            int indice_combo = cboestado.Items.IndexOf(oc); // Obtenemos el indice dentro del ComboBox
-                            cboestado.SelectedIndex = indice_combo; // Y ese combo mandamos a mostrar al cboestado
+                            int indice_combo = cboestado.Items.IndexOf(oc);
+                            cboestado.SelectedIndex = indice_combo;
                             break;
                         }
                     }
@@ -182,7 +182,7 @@ namespace CapaPresentacion
 
                     if (respuesta)
                     {
-                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text)); // Si la respeusta es true, se procede a eliminar la fila del DGV
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
                         Limpiar();
                     }
                     else
@@ -199,10 +199,8 @@ namespace CapaPresentacion
 
             if (dgvdata.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvdata.Rows) //Recorre cada fila del DataGridView
+                foreach (DataGridViewRow row in dgvdata.Rows) 
                 {
-                    /* Selecciono la celda de la columna, obtengo el valor y lo convierto a texto, lugo elimino los espacios en blanco
-                       y convierto todo el texto a mayus, ya teniendo esto voy a comparar el valor de la celda con el texto dado en busqueda. */
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                         row.Visible = true;
                     else
@@ -224,5 +222,6 @@ namespace CapaPresentacion
         {
             Limpiar();
         }
+
     }
 }

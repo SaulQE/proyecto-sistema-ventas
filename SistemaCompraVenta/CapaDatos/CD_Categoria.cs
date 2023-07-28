@@ -61,15 +61,14 @@ namespace CapaDatos
         public int Registrar(Categoria obj, out string Mensaje)
         {
             int idCategoriagenerado = 0;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty;
 
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    // Crear un nuevo comando SQL para invocar un procedimiento almacenado
-                    SqlCommand cmd = new SqlCommand("SP_RegistrarCategoria", oconexion); // Asignar valores a los parámetros del comando
+                    SqlCommand cmd = new SqlCommand("SP_RegistrarCategoria", oconexion);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
@@ -83,7 +82,6 @@ namespace CapaDatos
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    //Obtengo los valores de los parametros de salida
                     idCategoriagenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -92,7 +90,6 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                // Capturar la excepción y obtener el mensaje de error
                 idCategoriagenerado = 0;
                 Mensaje = ex.Message;
             }
@@ -104,7 +101,7 @@ namespace CapaDatos
         public bool Editar(Categoria obj, out string Mensaje)
         {
             bool respuesta = false;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
 
             try
@@ -113,10 +110,10 @@ namespace CapaDatos
                 {
                     // Crear un nuevo comando SQL para invocar un procedimiento almacenado
                     SqlCommand cmd = new SqlCommand("SP_EditarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("id_Categoria", obj.id_Categoria);// Asignar valores a los parámetros del comando
+                    cmd.Parameters.AddWithValue("id_Categoria", obj.id_Categoria);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    // Parametros de salida
+                    
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -125,7 +122,6 @@ namespace CapaDatos
 
                     cmd.ExecuteNonQuery();
 
-                    //Obtengo los valores de los parametros de salida
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -145,7 +141,7 @@ namespace CapaDatos
         public bool Eliminar(Categoria obj, out string Mensaje)
         {
             bool Resultado = false;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
 
             try
@@ -154,8 +150,7 @@ namespace CapaDatos
                 {
                     // Crear un nuevo comando SQL para invocar un procedimiento almacenado
                     SqlCommand cmd = new SqlCommand("SP_EliminarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("id_Categoria", obj.id_Categoria);// Asignar valores a los parámetros del comando
-                    // Parametros de salida
+                    cmd.Parameters.AddWithValue("id_Categoria", obj.id_Categoria);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -163,7 +158,6 @@ namespace CapaDatos
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    //Obtengo los valores de los parametros de salida
                     Resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 

@@ -66,8 +66,6 @@ namespace CapaPresentacion
             contenedor.Controls.Add(formulario); //aca se agrega el formulario al contenedor
             formulario.BringToFront(); //para mandar al frente al form
             formulario.Show(); // para que se muestre el formulario
-
-
         }
 
         private void menuusuarios_Click(object sender, EventArgs e)

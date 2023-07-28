@@ -22,11 +22,11 @@ namespace CapaPresentacion
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" }); // Esto es para mi cbo Estado
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" }); 
             cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
-            cboestado.DisplayMember = "Texto"; //aca mostrara el dato que tiene de nombre Texto
-            cboestado.ValueMember = "Valor"; //no mostraria y manejaria como valor interno, y sera aquel dato con nombre Valor
-            cboestado.SelectedIndex = 0; //Para siempre selecionar el primero
+            cboestado.DisplayMember = "Texto";
+            cboestado.ValueMember = "Valor";
+            cboestado.SelectedIndex = 0;
 
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
@@ -41,14 +41,14 @@ namespace CapaPresentacion
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            List<Cliente> listaCliente = new CN_Cliente().Listar(); // Aqui obtengo la lista de todo los Clientes
+            List<Cliente> listaCliente = new CN_Cliente().Listar();
 
-            foreach (Cliente item in listaCliente) // voy a recorrer listaCliente, y el item esta comteniendo cada clase Cliente que esta dentro de la listaCliente
+            foreach (Cliente item in listaCliente) 
             {
 
-                dgvdata.Rows.Add(new object[] {"",item.id_Cliente,item.Documento,item.Nom_Completo,item.Correo,item.Telefono, // Envio todos mi valores a mi dgvData, como el txtid, 
-                item.Estado == true ? 1 : 0, // Estamos diciendo que si es true me muestre 1, en lo contrario muestre 0
-                item.Estado == true ? "Activo" : "No Activo" // 1era columna viene ser los valores y 2da el texto del estado
+                dgvdata.Rows.Add(new object[] {"",item.id_Cliente,item.Documento,item.Nom_Completo,item.Correo,item.Telefono, 
+                item.Estado == true ? 1 : 0, 
+                item.Estado == true ? "Activo" : "No Activo" 
                 });
             }
         }
@@ -57,9 +57,9 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
 
-            Cliente objcliente = new Cliente() // Creo objeto de la clase Cliente
+            Cliente objcliente = new Cliente() 
             {
-                id_Cliente = Convert.ToInt32(txtid.Text),  // Llenamos los atributos de la clase con los campos de texto
+                id_Cliente = Convert.ToInt32(txtid.Text),  
                 Documento = txtdocumento.Text,
                 Nom_Completo = txtnombrecompleto.Text,
                 Correo = txtcorreo.Text,
@@ -70,7 +70,7 @@ namespace CapaPresentacion
 
             if (objcliente.id_Cliente == 0)
             {
-                int idclientegenerado = new CN_Cliente().Registrar(objcliente, out mensaje); // Estamos pasando los parametros que requiere el metodo Registrar y como respuesta obtenemos el idClientegenerado
+                int idclientegenerado = new CN_Cliente().Registrar(objcliente, out mensaje); 
 
                 if (idclientegenerado != 0)
                 {
@@ -153,18 +153,18 @@ namespace CapaPresentacion
                 {
 
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["id"].Value.ToString(); //
+                    txtid.Text = dgvdata.Rows[indice].Cells["id"].Value.ToString(); 
                     txtdocumento.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
                     txtnombrecompleto.Text = dgvdata.Rows[indice].Cells["Nom_Completo"].Value.ToString();
                     txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txttelefono.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
 
-                    foreach (OpcionCombo oc in cboestado.Items) // lee todas las oc (las clases) que tengo dentro de cbrestado
+                    foreach (OpcionCombo oc in cboestado.Items) 
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
                         {
-                            int indice_combo = cboestado.Items.IndexOf(oc); // Obtenemos el indice dentro del ComboBox
-                            cboestado.SelectedIndex = indice_combo; // Y ese combo mandamos a mostrar al cboestado
+                            int indice_combo = cboestado.Items.IndexOf(oc); 
+                            cboestado.SelectedIndex = indice_combo; 
                             break;
                         }
                     }
@@ -192,7 +192,7 @@ namespace CapaPresentacion
 
                     if (respuesta)
                     {
-                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text)); // Si la respuesta es true, se procede a eliminar la fila del DGV
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text)); 
                         Limpiar();
                     }
                     else
@@ -209,10 +209,8 @@ namespace CapaPresentacion
 
             if (dgvdata.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvdata.Rows) //Recorre cada fila del DataGridView
+                foreach (DataGridViewRow row in dgvdata.Rows) 
                 {
-                    /* Selecciono la celda de la columna, obtengo el valor y lo convierto a texto, lugo elimino los espacios en blanco
-                       y convierto todo el texto a mayus, ya teniendo esto voy a comparar el valor de la celda con el texto dado en busqueda. */
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                         row.Visible = true;
                     else

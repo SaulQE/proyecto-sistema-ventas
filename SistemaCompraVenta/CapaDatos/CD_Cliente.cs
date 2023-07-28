@@ -14,13 +14,13 @@ namespace CapaDatos
 
         public List<Cliente> Listar()
         {
-            List<Cliente> Lista = new List<Cliente>(); // Crear una nueva lista de tipo Cliente
+            List<Cliente> Lista = new List<Cliente>();
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    StringBuilder query = new StringBuilder(); // Crear una nueva instancia de StringBuilder para construir la consulta SQL
+                    StringBuilder query = new StringBuilder();
                     query.AppendLine("select id_Cliente,Documento,Nom_Completo,Correo,Telefono,Estado from CLIENTE");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
@@ -28,15 +28,12 @@ namespace CapaDatos
 
                     oconexion.Open();
 
-                    // Ejecutar el comando y obtener un lector de datos
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        while (dr.Read()) // Leer cada fila de datos
+                        while (dr.Read())
                         {
-                            // Crear un nuevo objeto Cliente y agregarlo a la lista
                             Lista.Add(new Cliente()
                             {
-                                // Asignar valores a las propiedades del objeto Cliente
                                 id_Cliente = Convert.ToInt32(dr["id_Cliente"]),
                                 Documento = dr["Documento"].ToString(),
                                 Nom_Completo = dr["Nom_Completo"].ToString(),
@@ -49,12 +46,11 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    // En caso de error, asignar una lista vacía
                     Lista = new List<Cliente>();
 
                 }
             }
-            return Lista; // Devolver la lista de Clientes
+            return Lista; 
 
         }
 
@@ -63,7 +59,7 @@ namespace CapaDatos
         public int Registrar(Cliente obj, out string Mensaje)
         {
             int idClientegenerado = 0;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty;
 
 
             try
@@ -72,12 +68,11 @@ namespace CapaDatos
                 {
                     // Crear un nuevo comando SQL para invocar un procedimiento almacenado
                     SqlCommand cmd = new SqlCommand("SP_RegistrarCliente", oconexion);
-                    cmd.Parameters.AddWithValue("Documento", obj.Documento); // Asignar valores a los parámetros del comando
+                    cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("Nom_Completo", obj.Nom_Completo);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    // Parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -85,9 +80,8 @@ namespace CapaDatos
 
 
                     oconexion.Open();
-                    cmd.ExecuteNonQuery(); // Ejecutar el comando
+                    cmd.ExecuteNonQuery();
 
-                    //Obtengo los valores de los parametros de salida
                     idClientegenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -95,43 +89,39 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                // Capturar la excepción y obtener el mensaje de error
                 idClientegenerado = 0;
                 Mensaje = ex.Message;
             }
 
-            return idClientegenerado; // Devolver el ID generado
+            return idClientegenerado;
         }
-
 
 
         // Metodo editar Cliente
         public bool Editar(Cliente obj, out string Mensaje)
         {
             bool respuesta = false;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_EditarCliente", oconexion); // Crear un nuevo comando SQL para invocar un procedimiento almacenado
-                    cmd.Parameters.AddWithValue("id_Cliente", obj.id_Cliente); // Asignar valores a los parámetros del comando
+                    SqlCommand cmd = new SqlCommand("SP_EditarCliente", oconexion); 
+                    cmd.Parameters.AddWithValue("id_Cliente", obj.id_Cliente); 
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("Nom_Completo", obj.Nom_Completo);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    // Parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-                    cmd.ExecuteNonQuery(); // Ejecutar el comando
+                    cmd.ExecuteNonQuery();
 
-                    // Obtener el valor del parámetro de salida
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -143,7 +133,7 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
-            return respuesta; // Devolver la respuesta (true o false)
+            return respuesta;
         }
 
 
@@ -151,7 +141,7 @@ namespace CapaDatos
         public bool Eliminar(Cliente obj, out string Mensaje)
         {
             bool respuesta = false;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
             try
             {
@@ -159,23 +149,22 @@ namespace CapaDatos
                 {
                     // Crear un nuevo comando SQL para eliminar un cliente por su ID
                     SqlCommand cmd = new SqlCommand("delete from cliente where id_Cliente = @id", oconexion);
-                    cmd.Parameters.AddWithValue("@id", obj.id_Cliente); // Asignar valor al parámetro del comando
-                    cmd.CommandType = CommandType.Text;  // Establecer el tipo de comando como un texto SQL
+                    cmd.Parameters.AddWithValue("@id", obj.id_Cliente); 
+                    cmd.CommandType = CommandType.Text;  
 
 
                     oconexion.Open();
-                    respuesta = cmd.ExecuteNonQuery() > 0 ? true : false; // Ejecutar el comando y comprobar si se afectaron filas
+                    respuesta = cmd.ExecuteNonQuery() > 0 ? true : false; 
 
                 }
             }
             catch (Exception ex)
             {
-                // Capturar la excepción y obtener el mensaje de error
                 respuesta = false;
                 Mensaje = ex.Message;
             }
 
-            return respuesta; // Devolver la respuesta (true o false)
+            return respuesta; 
         }
 
     }

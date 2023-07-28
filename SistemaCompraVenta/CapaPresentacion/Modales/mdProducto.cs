@@ -15,7 +15,7 @@ namespace CapaPresentacion.Modales
 {
     public partial class mdProducto : Form
     {
-        public Producto _Producto { get; set; } // Creo una propiedad unica para mi clase producto
+        public Producto _Producto { get; set; }
 
         public mdProducto()
         {
@@ -36,9 +36,9 @@ namespace CapaPresentacion.Modales
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            List<Producto> listaProducto = new CN_Producto().Listar(); // Aqui obtengo la lista de todo los Productos
+            List<Producto> listaProducto = new CN_Producto().Listar(); 
 
-            foreach (Producto item in listaProducto) // voy a recorrer listaProducto, y el item esta comteniendo cada clase Producto que esta dentro de la listaProducto
+            foreach (Producto item in listaProducto) 
             {
 
                 dgvdata.Rows.Add(new object[] {
@@ -55,14 +55,14 @@ namespace CapaPresentacion.Modales
 
         private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int iRow = e.RowIndex;      // Obtengo el iRow el cual es el RowIndex que ha sido seleccionado
-            int iColum = e.ColumnIndex; // Obtengo el iColum el cual es el ColumnIndex que ha sido seleccionado (indice de la columna seleccionada)
+            int iRow = e.RowIndex;      
+            int iColum = e.ColumnIndex; 
             if (iRow >= 0 && iColum > 0)
             {
-                _Producto = new Producto() // le estoy diciendo que sea un nuevo producto
+                _Producto = new Producto() 
                 {
-                    id_Producto = Convert.ToInt32(dgvdata.Rows[iRow].Cells["id"].Value.ToString()), // Se acceden a las columnas del dgv y dependiendo se
-                    Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),                   //  va convertir para guardarlo en el atributo correspondiente de la clase
+                    id_Producto = Convert.ToInt32(dgvdata.Rows[iRow].Cells["id"].Value.ToString()), 
+                    Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),                  
                     Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
                     Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),
                     Precio_Compra = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["Precio_Compra"].Value.ToString()),
@@ -70,7 +70,7 @@ namespace CapaPresentacion.Modales
 
                 };
                 this.DialogResult = DialogResult.OK;
-                this.Close(); // Aqui se cierra el modal de donde nos encontramos
+                this.Close();
             }
         }
 
@@ -80,10 +80,8 @@ namespace CapaPresentacion.Modales
 
             if (dgvdata.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvdata.Rows) //Recorre cada fila del DataGridView
+                foreach (DataGridViewRow row in dgvdata.Rows)
                 {
-                    /* Selecciono la celda de la columna, obtengo el valor y lo convierto a texto, lugo elimino los espacios en blanco
-                       y convierto todo el texto a mayus, ya teniendo esto voy a comparar el valor de la celda con el texto dado en busqueda. */
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                         row.Visible = true;
                     else

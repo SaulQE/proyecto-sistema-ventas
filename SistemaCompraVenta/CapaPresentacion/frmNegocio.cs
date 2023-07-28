@@ -21,9 +21,9 @@ namespace CapaPresentacion
         }
 
         public Image ByteToImage(byte[] imageBytes) { 
-            MemoryStream ms = new MemoryStream(); // Nos permite guardar imagenes en memoria
-            ms.Write(imageBytes, 0, imageBytes.Length); // Es para el ancho del array
-            Image image = new Bitmap(ms); // Bitmap ayuda a hacer la conversión directamente
+            MemoryStream ms = new MemoryStream(); 
+            ms.Write(imageBytes, 0, imageBytes.Length); 
+            Image image = new Bitmap(ms); 
 
             return image;
         }
@@ -31,12 +31,12 @@ namespace CapaPresentacion
         private void frmNegocio_Load(object sender, EventArgs e)
         {
             bool obtenido = true;
-            byte[] byteimage = new CN_Negocio().ObtenerLogo(out obtenido); // Si pudo leer el logo desde la base de datos y lo esta almacenando en el arrays de bytes
+            byte[] byteimage = new CN_Negocio().ObtenerLogo(out obtenido); 
 
             if (obtenido)
-                piclogo.Image = ByteToImage(byteimage); // De esta forma ya estaria pintando el logo
+                piclogo.Image = ByteToImage(byteimage); 
 
-            Negocio datos = new CN_Negocio().ObtenerDatos(); // ObtenerDatos esta trayendo toda la información de la bd y lo esta almacenando en la varible datos que es de tipo negocio
+            Negocio datos = new CN_Negocio().ObtenerDatos(); 
 
             txtnombre.Text = datos.Nombre;
             txtruc.Text = datos.RUC;
@@ -52,11 +52,11 @@ namespace CapaPresentacion
             ofd.FileName = "Files|*.jpg;*.jpeg;*.png";
 
             if(ofd.ShowDialog() == DialogResult.OK){
-                byte[] byteimage = File.ReadAllBytes(ofd.FileName); // Convierto mi imagen en un array de bytes y va leer el archivo seleccionado del opf
+                byte[] byteimage = File.ReadAllBytes(ofd.FileName); 
                 bool respuesta = new CN_Negocio().ActualizarLogo(byteimage, out mensaje);
 
-                if (respuesta) // Si la respuesta es true va tener que ser igual a la imagen que deseamos
-                    piclogo.Image = ByteToImage(byteimage); // Llamo a mi metodo que convierte un array a una imagen
+                if (respuesta) 
+                    piclogo.Image = ByteToImage(byteimage); 
                 else
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -75,7 +75,7 @@ namespace CapaPresentacion
                 Direccion = txtdireccion.Text
             };
 
-            bool respuesta = new CN_Negocio().GuardarDatos(obj, out mensaje); // Con esto ya estaria guardando los datos
+            bool respuesta = new CN_Negocio().GuardarDatos(obj, out mensaje); 
 
             if(respuesta)
                 MessageBox.Show("Los cambios fueron guardados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);

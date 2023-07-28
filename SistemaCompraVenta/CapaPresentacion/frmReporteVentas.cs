@@ -23,12 +23,10 @@ namespace CapaPresentacion
 
         private void frmReporteVentas_Load(object sender, EventArgs e)
         {
-            // Agregar cada columna del DataGridView a la lista desplegable de búsqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
             }
-            // Establecer las propiedades de visualización y valor de la lista desplegable de búsqueda
             cbobusqueda.DisplayMember = "Texto";
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
@@ -44,7 +42,6 @@ namespace CapaPresentacion
 
             foreach (ReporteVenta rv in lista)
             {
-                // Agregar filas al dgvdata, para eso se utiliza new object para crear un nuevo arreglo de objetos que contenga los valores
                 dgvdata.Rows.Add(new object[]
                 {
                     rv.F_Registro,
@@ -70,10 +67,8 @@ namespace CapaPresentacion
 
             if (dgvdata.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvdata.Rows) //Recorre cada fila del DataGridView
+                foreach (DataGridViewRow row in dgvdata.Rows) 
                 {
-                    /* Selecciono la celda de la columna, obtengo el valor y lo convierto a texto, lugo elimino los espacios en blanco
-                       y convierto todo el texto a mayus, ya teniendo esto voy a comparar el valor de la celda con el texto dado en busqueda. */
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                         row.Visible = true;
                     else
@@ -102,18 +97,15 @@ namespace CapaPresentacion
             {
                 DataTable dt = new DataTable();
 
-                // accedo a todas las columnas que tiene mi dgvdata
                 foreach (DataGridViewColumn columna in dgvdata.Columns)
                 {
 
-                    // Agregar una nueva columna al DataTable con el encabezado de la columna actual del DataGridView
                     dt.Columns.Add(columna.HeaderText, typeof(string));
                 }
 
-                foreach (DataGridViewRow row in dgvdata.Rows) // accedo a todas las filas de mi datagridview
+                foreach (DataGridViewRow row in dgvdata.Rows) 
                 {
                     if (row.Visible)
-                        // Agregar los valores de cada celda de la fila actual al DataTable
                         dt.Rows.Add(new object[]{
                             row.Cells[0].Value.ToString(),
                             row.Cells[1].Value.ToString(),
@@ -132,20 +124,17 @@ namespace CapaPresentacion
                 }
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.FileName = string.Format("ReporteVentas_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
-                saveFile.Filter = "Excel File | *.xlxs"; // Solo visualizar archivos xlxs en la ventana de dialogo
+                saveFile.Filter = "Excel File | *.xlxs";
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
-                        // Crear un nuevo documento de Excel y agregar los datos del DataTable en una hoja
                         XLWorkbook wb = new XLWorkbook();
                         var hoja = wb.Worksheets.Add(dt, "Informe");
 
-                        // Ajustar el ancho de las columnas según el contenido
                         hoja.ColumnsUsed().AdjustToContents();
 
-                        // Guardar el archivo en la ubicación especificada
                         wb.SaveAs(saveFile.FileName);
                         MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -28,13 +28,13 @@ namespace CapaPresentacion
         private void frmCompras_Load(object sender, EventArgs e)
         {
            
-            cbotipodocumento.Items.Add(new OpcionCombo() { Valor = "Boleta", Texto = "Boleta" }); // Esto es para mi cbotipodocumento
+            cbotipodocumento.Items.Add(new OpcionCombo() { Valor = "Boleta", Texto = "Boleta" });
             cbotipodocumento.Items.Add(new OpcionCombo() { Valor = "Factura", Texto = "Factura" });
-            cbotipodocumento.DisplayMember = "Texto"; //aca mostrara el dato que tiene de nombre Texto
-            cbotipodocumento.ValueMember = "Valor"; //no mostraria y manejaria como valor interno, y sera aquel dato con nombre Valor
-            cbotipodocumento.SelectedIndex = 0; //Para siempre selecionar el primero
+            cbotipodocumento.DisplayMember = "Texto";
+            cbotipodocumento.ValueMember = "Valor";
+            cbotipodocumento.SelectedIndex = 0;
 
-            txtfecha.Text = DateTime.Now.ToString("dd/MM/yyyy"); // Para mostrar la fecha en el txtfecha
+            txtfecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             txtidproveedor.Text = "0";
             txtidproducto.Text = "0";
@@ -44,9 +44,8 @@ namespace CapaPresentacion
         {
             using (var modal = new mdProveedor())
             {
-                var result = modal.ShowDialog(); // Hacer que se muestre el form y cualquier acción de resultado lo va obtener en la variable result
-
-                if(result == DialogResult.OK) // Si cumple quiero que mis txt sean igual a mi form de Modal (mdProveedor) y accedera a sus atributos
+                var result = modal.ShowDialog(); 
+                if(result == DialogResult.OK) 
                 {
                     txtidproveedor.Text = modal._Proveedor.id_Proveedor.ToString();
                     txtdocproveedor.Text = modal._Proveedor.Documento;
@@ -64,14 +63,14 @@ namespace CapaPresentacion
         {
             using (var modal = new mdProducto())
             {
-                var result = modal.ShowDialog(); // Hacer que se muestre el form y cualquier acción de resultado lo va obtener en la variable result
+                var result = modal.ShowDialog();
 
-                if (result == DialogResult.OK) // Si cumple quiero que mis txt sean igual a mi form de Modal (mdProveedor) y accedera a sus atributos
+                if (result == DialogResult.OK)
                 {
                     txtidproducto.Text = modal._Producto.id_Producto.ToString();
                     txtcodproducto.Text = modal._Producto.Codigo;
                     txtproducto.Text = modal._Producto.Nombre;
-                    txtpreciocompra.Select(); // Para hacer un focus (osea que se seleccione ahi)
+                    txtpreciocompra.Select(); 
                 }
                 else
                 {
@@ -82,24 +81,21 @@ namespace CapaPresentacion
 
         private void txtcodproducto_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter) // Si la tecla del teclado es enter entonces
+            if(e.KeyData == Keys.Enter)
             {
-                /* Se realiza una búsqueda en la lista de productos utilizando la clase CN_Producto para obtener un producto específico
-                   El metodo listar devuelve una lista de productos y luego con el metodo where se hara el filtrado de productos segun las condiciones */
-
-                Producto oProducto = new CN_Producto().Listar().Where(p => p.Codigo == txtcodproducto.Text && p.Estado == true).FirstOrDefault(); // FirstOrDefault para obtener el primer producto que cumpla las condiciones
+                Producto oProducto = new CN_Producto().Listar().Where(p => p.Codigo == txtcodproducto.Text && p.Estado == true).FirstOrDefault(); 
 
                 if (oProducto != null)
                 {
-                    txtcodproducto.BackColor = System.Drawing.Color.Honeydew; // Si encontro el producto se pintara de color verde
+                    txtcodproducto.BackColor = System.Drawing.Color.Honeydew;
                     txtidproducto.Text = oProducto.id_Producto.ToString();
                     txtproducto.Text = oProducto.Nombre;
                     txtpreciocompra.Select();
 
                 }
                 else {
-                    txtcodproducto.BackColor = System.Drawing.Color.MistyRose; // Si no encontro el producto se pintara igualmente
-                    txtidproducto.Text = "0"; // El id Producto sera 0 porque no se ha encontrado
+                    txtcodproducto.BackColor = System.Drawing.Color.MistyRose;
+                    txtidproducto.Text = "0";
                     txtproducto.Text = ""; 
 
                 }
@@ -120,7 +116,7 @@ namespace CapaPresentacion
                 MessageBox.Show("Debe seleccionar un producto","Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (!decimal.TryParse(txtpreciocompra.Text, out preciocompra)) // TryParce para convertirlo en un decimal, y sera true por que estoy negando false con !
+            if (!decimal.TryParse(txtpreciocompra.Text, out preciocompra)) 
             {
                 MessageBox.Show("Precio Compra - Formato moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtpreciocompra.Select();
@@ -133,23 +129,23 @@ namespace CapaPresentacion
                 return;
             }
 
-            foreach (DataGridViewRow fila in dgvdata.Rows) // Esta recorriendo cada Rows(Fila) del dgvdata y estoy almacenando en fila
+            foreach (DataGridViewRow fila in dgvdata.Rows)
             {
-                if (fila.Cells["id"].Value.ToString() == txtidproducto.Text) // Si id_Producto contiene ese id_Producto que estoy agregando
+                if (fila.Cells["id"].Value.ToString() == txtidproducto.Text) 
                 {
                     producto_existe = true;
                     break;
                 }
             }
-            if (!producto_existe) // con ! estoy negando el resultado si es true lo niega y es lo vuelve false y viceversa
+            if (!producto_existe)
             {
                 dgvdata.Rows.Add(new object[]
                 {
-                    txtidproducto.Text,  // Agregando
+                    txtidproducto.Text,
                     txtproducto.Text,
-                    preciocompra.ToString("0.00"), // Aqui menciono para que se pinten con decimales de 2
+                    preciocompra.ToString("0.00"),
                     precioventa.ToString("0.00"),
-                    txtcantidad.Value.ToString(), // no es textBox, es un NumericUpDown por eso accedo por la propiedad Value 
+                    txtcantidad.Value.ToString(), 
                     (txtcantidad.Value * preciocompra).ToString("0.00")
 
                 });
@@ -179,13 +175,12 @@ namespace CapaPresentacion
         private void calcularTotal()
         {
             decimal total = 0;
-            if(dgvdata.Rows.Count > 0){ // Conteo de todas las filas de mi dgvdata
+            if(dgvdata.Rows.Count > 0){ 
                 foreach (DataGridViewRow row in dgvdata.Rows)
-                    /* Recorriendo cada uno de ellos y en especial esta recorreiendo la columna subtotal
-                       y con el += estoy aumentando el valor de total */
+                    
                     total += Convert.ToDecimal(row.Cells["Monto_Total"].Value.ToString()); 
             }
-            txttotalpagar.Text = total.ToString("0.00"); // Si no hay registros se pintara lo que tiene total
+            txttotalpagar.Text = total.ToString("0.00");
         }
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -211,11 +206,11 @@ namespace CapaPresentacion
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btneliminar")
             {
-                int indice = e.RowIndex; // Aqui estoy diciendo que fila voy a eliminar por medio del indice
+                int indice = e.RowIndex;
 
                 if (indice >= 0)
                 {
-                    dgvdata.Rows.RemoveAt(indice); // Cuando elimine un item, tambien calcular el total
+                    dgvdata.Rows.RemoveAt(indice);
                     calcularTotal();
 
                 }
@@ -225,20 +220,17 @@ namespace CapaPresentacion
 
         private void txtpreciocompra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Verifica si el carácter presionado es un dígito
             if (Char.IsDigit(e.KeyChar))
             {
-                e.Handled = false; // Permite el ingreso del carácter
+                e.Handled = false; 
             }
             else
             {
-                // Verifica si el campo de texto está vacío y el carácter presionado es un punto decimal
                 if (txtpreciocompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
                 {
-                    e.Handled = true; // Bloquea el ingreso del carácter
+                    e.Handled = true; 
                 }
                 else {
-                    // Verifica si el carácter presionado es un control o un punto decimal
                     if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
                     {
                         e.Handled = false;
@@ -252,21 +244,18 @@ namespace CapaPresentacion
 
         private void txtprecioventa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Verifica si el carácter presionado es un dígito
             if (Char.IsDigit(e.KeyChar))
             {
-                e.Handled = false; // Permite el ingreso del carácter
+                e.Handled = false; 
             }
             else
             {
-                // Verifica si el campo de texto está vacío y el carácter presionado es un punto decimal
                 if (txtprecioventa.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
                 {
-                    e.Handled = true; // Bloquea el ingreso del carácter
+                    e.Handled = true;
                 }
                 else
                 {
-                    // Verifica si el carácter presionado es un control o un punto decimal
                     if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
                     {
                         e.Handled = false; 
@@ -281,33 +270,27 @@ namespace CapaPresentacion
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
-            // Verifica si no se ha seleccionado un proveedor
             if (Convert.ToInt32(txtidproveedor.Text) == 0)
             {
                 MessageBox.Show("Debe selecionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return; // Sale del método
+                return; 
             }
-            // Verifica si no se han ingresado productos en la compra
             if (dgvdata.Rows.Count < 1)
             {
                 MessageBox.Show("Debe ingresar productos en la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            // Crea una DataTable para almacenar el detalle de la compra
             DataTable detalle_compra = new DataTable();
 
-            // Agrega las columnas a la DataTable
             detalle_compra.Columns.Add("id_Producto", typeof(int));
             detalle_compra.Columns.Add("Precio_Compra", typeof(decimal));
             detalle_compra.Columns.Add("Precio_Venta", typeof(decimal));
             detalle_compra.Columns.Add("Cantidad", typeof(int));
             detalle_compra.Columns.Add("Monto_Total", typeof(decimal));
 
-            // Recorre cada fila del DataGridView
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
-                // Agrega una nueva fila a la DataTable con los valores de la fila del DataGridView
                 detalle_compra.Rows.Add(
                     new object[]{
                         Convert.ToInt32(row.Cells["id"].Value.ToString()),
@@ -318,13 +301,10 @@ namespace CapaPresentacion
                     });
             }
 
-            // Obtiene el correlativo de la compra
             int idcorrelativo = new CN_Compra().ObtenerCorrelativo();
 
-            // Formatea el correlativo como un número de documento
             string numerodocumento = string.Format("{0:00000}", idcorrelativo);
 
-            // Crea un objeto de tipo Compra con los datos ingresados
             Compra oCompra = new Compra()
             {
                 oUsuario = new Usuario() { id_Usuario = _Usuario.id_Usuario },
@@ -336,19 +316,16 @@ namespace CapaPresentacion
 
             string mensaje = string.Empty;
 
-            // Llama al método Registrar() de la capa de negocio para registrar la compra
             bool respuesta = new CN_Compra().Registrar(oCompra, detalle_compra, out mensaje);
 
             if (respuesta)
             {
-                // Muestra el número de compra generado y pregunta si desea copiarlo al portapapeles
                 var result = MessageBox.Show("Número de compra generada:\n" + numerodocumento + "\n\n¿Desea copiar al portapapeles?"
                     ,"Mensaje",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
                 
                 if (result == DialogResult.Yes)
                     Clipboard.SetText(numerodocumento);
 
-                // Reinicia los campos y el DataGridView
                 txtidproveedor.Text = "0";
                 txtdocproveedor.Text = "";
                 txtnombreproveedor.Text = "";

@@ -22,10 +22,10 @@ namespace CapaDatos
 
                     string query = "select id_Negocio,Nombre,RUC,Direccion from NEGOCIO where id_Negocio = 1";
                     SqlCommand cmd = new SqlCommand(query, conexion);
-                    cmd.CommandType = CommandType.Text; // Comando de tipo texto
+                    cmd.CommandType = CommandType.Text; 
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()) { //dar lectura 
-                        while (dr.Read()) {  // Mientras lee, se va a guardar mi obj
+                    using (SqlDataReader dr = cmd.ExecuteReader()) { 
+                        while (dr.Read()) {  
                             obj = new Negocio() 
                             { 
                                 id_Negocio = int.Parse(dr["id_Negocio"].ToString()),
@@ -46,8 +46,8 @@ namespace CapaDatos
 
         public bool GuardarDatos(Negocio objeto, out string mensaje) {
 
-            mensaje = string.Empty;  //Vacio
-            bool respuesta = true;   //Guardar respuesta y por defecto true
+            mensaje = string.Empty;  
+            bool respuesta = true;   
 
             try
             {
@@ -56,7 +56,7 @@ namespace CapaDatos
                 {
                     conexion.Open();
 
-                    StringBuilder query = new StringBuilder(); //El StringBuilder nos permite usar saltos de linea
+                    StringBuilder query = new StringBuilder(); 
                     query.AppendLine("update NEGOCIO set Nombre = @nombre,");
                     query.AppendLine("RUC = @ruc,");
                     query.AppendLine("Direccion = @direccion");
@@ -67,9 +67,9 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@nombre", objeto.Nombre);
                     cmd.Parameters.AddWithValue("@ruc", objeto.RUC);
                     cmd.Parameters.AddWithValue("@direccion", objeto.Direccion);
-                    cmd.CommandType = CommandType.Text; // Comando de tipo texto
+                    cmd.CommandType = CommandType.Text; 
 
-                    if(cmd.ExecuteNonQuery() < 1) { // Si el numero de filas afectadas es menor a 1 (es porque no actualizo)
+                    if(cmd.ExecuteNonQuery() < 1) { 
                         mensaje = "No se pudo guardar los datos";
                         respuesta = false;
                     }
@@ -97,13 +97,13 @@ namespace CapaDatos
                     string query = "select Logo from NEGOCIO where id_Negocio = 1";
 
                     SqlCommand cmd = new SqlCommand(query, conexion);
-                    cmd.CommandType = CommandType.Text; // Comando de tipo texto
+                    cmd.CommandType = CommandType.Text; 
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()) //dar lectura 
+                    using (SqlDataReader dr = cmd.ExecuteReader()) 
                     { 
-                        while (dr.Read())  // Mientras lee, se va a guardar mi obj
+                        while (dr.Read())  
                         {
-                            LogoBytes = (byte[])dr["Logo"]; // estoy casteando
+                            LogoBytes = (byte[])dr["Logo"]; 
                         }
                     }
                 }
@@ -118,8 +118,8 @@ namespace CapaDatos
         }
 
         public bool ActualizarLogo(byte[] image, out string mensaje) {
-            mensaje = string.Empty;  //Vacio
-            bool respuesta = true;   //Guardar respuesta y por defecto true
+            mensaje = string.Empty;  
+            bool respuesta = true;   
 
             try
             {
@@ -128,15 +128,15 @@ namespace CapaDatos
                 {
                     conexion.Open();
 
-                    StringBuilder query = new StringBuilder(); //El StringBuilder nos permite usar saltos de linea
+                    StringBuilder query = new StringBuilder(); 
                     query.AppendLine("update NEGOCIO set Logo = @imagen");
                     query.AppendLine("where id_Negocio = 1;");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.Parameters.AddWithValue("@imagen", image);
-                    cmd.CommandType = CommandType.Text; // Comando de tipo texto
+                    cmd.CommandType = CommandType.Text; 
 
-                    if (cmd.ExecuteNonQuery() < 1) // Si el numero de filas afectadas es menor a 1 (es porque no actualizo)
+                    if (cmd.ExecuteNonQuery() < 1) 
                     { 
                         mensaje = "No se pudo actualizar el logo";
                         respuesta = false;

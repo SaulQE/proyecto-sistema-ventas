@@ -14,29 +14,29 @@ namespace CapaDatos
     {
         public int ObtenerCorrelativo()
         {
-            int idcorrelativo = 0; // Variable para almacenar el valor del próximo correlativo
+            int idcorrelativo = 0;
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select count(*) +1 from VENTA"); // Consulta para obtener el total de registros en la tabla VENTA y agregar 1 al resultado
+                    query.AppendLine("select count(*) +1 from VENTA"); 
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); // Creación de un comando SQL utilizando la consulta y la conexión
-                    cmd.CommandType = CommandType.Text;                           // Especificación de que el tipo de comando es de texto
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); 
+                    cmd.CommandType = CommandType.Text;                          
 
                     oconexion.Open();
 
-                    idcorrelativo = Convert.ToInt32(cmd.ExecuteScalar()); // Ejecución de la consulta y asignación del resultado al valor de idcorrelativo
+                    idcorrelativo = Convert.ToInt32(cmd.ExecuteScalar());
 
                 }
                 catch (Exception ex)
                 {
-                    idcorrelativo = 0; // En caso de que ocurra una excepción, se asigna 0 al valor de idcorrelativo
+                    idcorrelativo = 0; 
                 }
             }
-            return idcorrelativo; // Devuelve el valor del próximo correlativo
+            return idcorrelativo; 
         }
 
         public bool RestarStock(int idproducto, int cantidad)
@@ -47,21 +47,17 @@ namespace CapaDatos
             {
                 try
                 {
-                    // Construir el comando SQL para actualizar el stock del producto restando la cantidad especificada.
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update PRODUCTO set Stock = Stock - @cantidad where id_Producto = @idproducto");
 
-                    // Creación del objeto SqlCommand para ejecutar el comando SQL en la base de datos.
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconoxion);
 
-                    // Asignación de parámetros a la consulta SQL.
                     cmd.Parameters.AddWithValue("@cantidad", cantidad);
                     cmd.Parameters.AddWithValue("@idproducto", idproducto);
                     cmd.CommandType = CommandType.Text;
 
                     oconoxion.Open();
 
-                    // Ejecutar el comando y verificar si se afectaron filas en la base de datos.
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
 
                 }catch (Exception ex)
@@ -80,21 +76,17 @@ namespace CapaDatos
             {
                 try
                 {
-                    // Construir el comando SQL para actualizar el stock del producto sumando la cantidad especificada.
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update PRODUCTO set Stock = Stock + @cantidad where id_Producto = @idproducto");
 
-                    // Creación del objeto SqlCommand para ejecutar el comando SQL en la base de datos.
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconoxion);
 
-                    // Asignación de parámetros a la consulta SQL.
                     cmd.Parameters.AddWithValue("@cantidad", cantidad);
                     cmd.Parameters.AddWithValue("@idproducto", idproducto);
                     cmd.CommandType = CommandType.Text;
 
                     oconoxion.Open();
 
-                    // Ejecutar el comando y verificar si se afectaron filas en la base de datos.
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
 
                 }
@@ -108,15 +100,15 @@ namespace CapaDatos
 
         public bool Registrar(Venta obj, DataTable DetalleVenta, out string Mensaje)
         {
-            bool Respuesta = false; // Variable para almacenar la respuesta del registro
-            Mensaje = string.Empty; // Variable para almacenar el mensaje de respuesta o cualquier mensaje de error
+            bool Respuesta = false; 
+            Mensaje = string.Empty; 
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_RegistrarVenta", oconexion);   // Creación de un nuevo comando SQL utilizando el procedimiento almacenado "SP_RegistrarVenta"
-                    cmd.Parameters.AddWithValue("id_Usuario", obj.oUsuario.id_Usuario); // Asignación del valor al parámetro correspondiente
+                    SqlCommand cmd = new SqlCommand("SP_RegistrarVenta", oconexion);   
+                    cmd.Parameters.AddWithValue("id_Usuario", obj.oUsuario.id_Usuario);
                     cmd.Parameters.AddWithValue("Tipo_Documento", obj.Tipo_Documento);
                     cmd.Parameters.AddWithValue("Nro_Documento", obj.Nro_Documento);
                     cmd.Parameters.AddWithValue("Documento_Cliente", obj.Documento_Cliente);
@@ -124,28 +116,28 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Monto_Pago", obj.Monto_Pago);
                     cmd.Parameters.AddWithValue("Monto_Cambio", obj.Monto_Cambio);
                     cmd.Parameters.AddWithValue("Monto_Total", obj.Monto_Total);
-                    cmd.Parameters.AddWithValue("Detalle_Venta", DetalleVenta); // Asignación del valor de la tabla de detalle de venta al parámetro
-                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;        // Definición del parámetro de salida para el resultado del registro
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output; // Definición del parámetro de salida para el mensaje de respuesta
+                    cmd.Parameters.AddWithValue("Detalle_Venta", DetalleVenta); 
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;       
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
-                    cmd.CommandType = CommandType.StoredProcedure; // Especificación de que el tipo de comando es un procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure; 
 
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
 
-                    Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value); // Obtención del resultado y del mesaje a partir del parámetro de salida
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value); 
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
 
             } catch (Exception ex)
             {
-                Respuesta = false;    // En caso de que ocurra una excepción, se asigna false a la respuesta del registro
-                Mensaje = ex.Message; // Se asigna el mensaje de error a la variable de mensaje
+                Respuesta = false;    
+                Mensaje = ex.Message; 
             }
             
 
-            return Respuesta; // Devuelve la respuesta del registro (true o false)
+            return Respuesta; 
         }
 
         public Venta ObtenerVenta(string numero)
@@ -168,21 +160,16 @@ namespace CapaDatos
                     query.AppendLine("INNER JOIN USUARIO u on u.id_Usuario = v.id_Usuario");
                     query.AppendLine("where v.Nro_Documento = @numero");
 
-                    // Se crea un comando SqlCommand con la consulta y la conexión.
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
 
-                    // Se establece el parámetro @numero con el valor proporcionado en el metodo.
                     cmd.Parameters.AddWithValue("@numero", numero);
 
                     cmd.CommandType = CommandType.Text;
 
-                    // Se ejecuta el comando y se obtiene un SqlDataReader para leer los resultados.
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        // Se lee cada fila del resultado.
                         while (dr.Read())
                         {
-                            // Se asignan los valores de las columnas del resultado a las propiedades del objeto Venta.
                             obj = new Venta()
                             {
                                 id_Venta = int.Parse(dr["id_Venta"].ToString()),
@@ -201,12 +188,10 @@ namespace CapaDatos
                 }
                 catch
                 {
-                    // Si ocurre una excepción, se crea una nueva instancia de Venta vacía.
                     obj = new Venta();
                 }
 
             }
-            // Se retorna el objeto venta obtenido.
             return obj;
         }
 
@@ -218,28 +203,21 @@ namespace CapaDatos
                 try
                 {
                     conexion.Open();
-                    // Se crea un objeto StringBuilder para construir la consulta SQL.
                     StringBuilder query = new StringBuilder();
 
-                    // Se agrega la consulta SQL a la cadena de texto usando AppendLine para cada línea.
                     query.AppendLine("select p.Nombre,dv.Precio_Venta,dv.Cantidad,dv.SubTotal from DETALLE_VENTA dv");
                     query.AppendLine("INNER JOIN PRODUCTO p on p.id_Producto = dv.id_Producto");
                     query.AppendLine("where dv.id_Venta = @idventa");
 
-                    // Se crea un comando SqlCommand con la consulta y la conexión.
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
 
-                    // Se establece el parámetro @idventa con el valor proporcionado en el metodo.
                     cmd.Parameters.AddWithValue("@idventa", idventa);
                     cmd.CommandType = System.Data.CommandType.Text;
 
-                    // Se ejecuta el comando y se obtiene un SqlDataReader para leer los resultados.
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        // Se lee cada fila del resultado.
                         while (dr.Read())
                         {
-                            // En el objeto creado de Detalle_Venta se asignan los valores de las columnas del resultado a sus propiedades.
                             oLista.Add(new Detalle_Venta()
                             {
                                 oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
@@ -253,7 +231,6 @@ namespace CapaDatos
                 }
                 catch
                 {
-                    // Si ocurre una excepción, se crea una nueva lista de Detalle_Venta vacía.
                     oLista = new List<Detalle_Venta>();
                 }
             }

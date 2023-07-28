@@ -89,7 +89,7 @@
             this.menu.Margin = new System.Windows.Forms.Padding(2);
             this.menu.MaximumSize = new System.Drawing.Size(250, 1061);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(250, 707);
+            this.menu.Size = new System.Drawing.Size(250, 668);
             this.menu.TabIndex = 2;
             // 
             // panel1
@@ -635,7 +635,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(250, 0);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1230, 707);
+            this.contenedor.Size = new System.Drawing.Size(1214, 668);
             this.contenedor.TabIndex = 3;
             // 
             // Inicio
@@ -644,7 +644,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1480, 707);
+            this.ClientSize = new System.Drawing.Size(1464, 668);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

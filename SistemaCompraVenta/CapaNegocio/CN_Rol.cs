@@ -11,11 +11,11 @@ namespace CapaNegocio
 {
     public class CN_Rol
     {
-        private CD_Rol objcd_rol = new CD_Rol(); // Estamos creando un obj de la clase rol
+        private CD_Rol objcd_rol = new CD_Rol();
 
-        public List<Rol> Listar() // Devuelve una lista de la clase Rol
+        public List<Rol> Listar() 
         {
-            return objcd_rol.Listar(); // Se devuelve el metodo listar, este metodo listar hacer llamdado a listar de CD_Rol
+            return objcd_rol.Listar(); 
 
         }
 

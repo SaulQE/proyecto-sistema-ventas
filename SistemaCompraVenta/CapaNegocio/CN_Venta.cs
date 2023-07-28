@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class CN_Venta
     {
-        private CD_Venta objcd_venta = new CD_Venta(); // Creación de una instancia de la clase CD_Venta en la capa de datos
+        private CD_Venta objcd_venta = new CD_Venta();
 
         public bool RestarStock(int idproducto, int cantidad)
         {
@@ -25,20 +25,19 @@ namespace CapaNegocio
 
         public int ObtenerCorrelativo()
         {
-            return objcd_venta.ObtenerCorrelativo(); // Llamada al método ObtenerCorrelativo() de la instancia objcd_compra para obtener el correlativo de compra
+            return objcd_venta.ObtenerCorrelativo(); 
         }
 
         public bool Registrar(Venta obj, DataTable DetalleVenta, out string Mensaje)
         {
 
-            return objcd_venta.Registrar(obj, DetalleVenta, out Mensaje); // Llamada al método Registrar() de la instancia objcd_compra para registrar una compra y obtener el resultado y mensaje correspondiente
+            return objcd_venta.Registrar(obj, DetalleVenta, out Mensaje); 
         }
 
         public Venta ObtenerVenta(string numero)
         {
             Venta oVenta = objcd_venta.ObtenerVenta(numero);
 
-            // Validar si realmente obtuvo una venta o no existe
             if(oVenta.id_Venta != 0)
             {
                 List<Detalle_Venta> oDetalleVenta = objcd_venta.ObtenerDetalleVenta(oVenta.id_Venta);

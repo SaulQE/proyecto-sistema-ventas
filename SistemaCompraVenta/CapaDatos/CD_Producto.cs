@@ -16,27 +16,24 @@ namespace CapaDatos
 
         public List<Producto> Listar()
         {
-            List<Producto> Lista = new List<Producto>(); // Crear una lista de objetos Producto
+            List<Producto> Lista = new List<Producto>(); 
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    // Construir la consulta SQL para obtener los datos de los productos y sus categorías
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("select id_Producto, Codigo, Nombre, p.Descripcion,c.id_Categoria,c.Descripcion[DescripcionCategoria],Stock,Precio_Compra,Precio_Venta,p.Estado from PRODUCTO p");
                     query.AppendLine("inner join CATEGORIA c on c.id_Categoria = p.id_Categoria");
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); // Crear un nuevo comando SQL
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); 
                     cmd.CommandType = CommandType.Text;
 
                     oconexion.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()) // Ejecutar el comando y obtener un lector de datos
+                    using (SqlDataReader dr = cmd.ExecuteReader()) 
                     {
-                        // Iterar sobre los registros del lector de datos
                         while (dr.Read())
                         {
-                            // Crear un nuevo objeto Producto y asignar los valores de las columnas del registro actual
                             Lista.Add(new Producto()
                             {
                                 id_Producto = Convert.ToInt32(dr["id_Producto"]),
@@ -67,30 +64,29 @@ namespace CapaDatos
         public int Registrar(Producto obj, out string Mensaje)
         {
             int idProductogenerado = 0;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_RegistrarProducto", oconexion); // Crear un nuevo comando SQL para invocar un procedimiento almacenado
-                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo); // Asignar valores a los parámetros del comando
+                    SqlCommand cmd = new SqlCommand("SP_RegistrarProducto", oconexion); 
+                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo); 
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("@id_Categoria", obj.oCategoria.id_Categoria);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
-                    // Parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open(); 
-                    cmd.ExecuteNonQuery(); // Ejecutar el comando
+                    cmd.ExecuteNonQuery(); 
 
-                    idProductogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value); // Obtener el valor del parámetro de salida
+                    idProductogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value); 
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
                 }
@@ -110,31 +106,29 @@ namespace CapaDatos
         public bool Editar(Producto obj, out string Mensaje)
         {
             bool respuesta = false;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_EditarProducto", oconexion); // Crear un nuevo comando SQL para invocar un procedimiento almacenado
-                    cmd.Parameters.AddWithValue("id_Producto", obj.id_Producto); // Asignar valores a los parámetros del comando
+                    SqlCommand cmd = new SqlCommand("SP_EditarProducto", oconexion);
+                    cmd.Parameters.AddWithValue("id_Producto", obj.id_Producto); 
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("id_Categoria", obj.oCategoria.id_Categoria);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
-                    // Parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
 
                     oconexion.Open();
-                    cmd.ExecuteNonQuery(); // Ejecutar el comando
+                    cmd.ExecuteNonQuery(); 
 
-                    // Obtener el valor del parámetro de salida
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -147,7 +141,7 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
-            return respuesta; // Devolver la respuesta (true  o false)
+            return respuesta; 
         }
 
 
@@ -155,26 +149,23 @@ namespace CapaDatos
         public bool Eliminar(Producto obj, out string Mensaje)
         {
             bool Respuesta = false;
-            Mensaje = string.Empty; // El valor del mensaje esta vacio
+            Mensaje = string.Empty; 
 
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_EliminarProducto", oconexion); // Crear un nuevo comando SQL para invocar un procedimiento almacenado
-                    cmd.Parameters.AddWithValue("id_Producto", obj.id_Producto); // Asignar valores a los parámetros del comando
+                    SqlCommand cmd = new SqlCommand("SP_EliminarProducto", oconexion);
+                    cmd.Parameters.AddWithValue("id_Producto", obj.id_Producto);
 
-                    //Parametros de salida
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
-
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    // Obtener el valor del parámetro de salida
                     Respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -187,7 +178,7 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
-            return Respuesta; // Devolver la respuesta (true  o false)
+            return Respuesta; 
         }
 
     }

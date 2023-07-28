@@ -11,7 +11,6 @@ namespace CapaDatos
 {
     public class CD_Reporte
     {
-        // Método para obtener el reporte de compras
         public List<ReporteCompra> Compra(string fechainicio, string fechafin, int idproveedor)
         {
             List<ReporteCompra> Lista = new List<ReporteCompra>();
@@ -22,7 +21,6 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
 
-                    // Creación del objeto SqlCommand para ejecutar el stored procedure "SP_ReporteCompras" en la base de datos.
                     SqlCommand cmd = new SqlCommand("SP_ReporteCompras",oconexion);
                     cmd.Parameters.AddWithValue("fechaInicio",fechainicio);
                     cmd.Parameters.AddWithValue("fechaFin",fechafin);
@@ -31,12 +29,10 @@ namespace CapaDatos
 
                     oconexion.Open();
 
-                    // Ejecución del stored procedure y obtención de los resultados utilizando un SqlDataReader.
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            // Creación de objetos ReporteCompra y asignación de valores de cada fila del resultado a los atributos correspondientes.
                             Lista.Add(new ReporteCompra()
                             {
                                 F_Registro = dr["F_Registro"].ToString(),
@@ -69,7 +65,6 @@ namespace CapaDatos
         }
 
 
-        // Método para obtener el reporte de ventas
         public List<ReporteVenta> Venta(string fechainicio, string fechafin)
         {
             List<ReporteVenta> Lista = new List<ReporteVenta>();
@@ -80,7 +75,6 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
 
-                    // Creación del objeto SqlCommand para ejecutar el stored procedure "SP_ReporteVentas" en la base de datos.
                     SqlCommand cmd = new SqlCommand("SP_ReporteVentas", oconexion);
                     cmd.Parameters.AddWithValue("fechaInicio", fechainicio);
                     cmd.Parameters.AddWithValue("fechaFin", fechafin);
@@ -88,12 +82,10 @@ namespace CapaDatos
 
                     oconexion.Open();
 
-                    // Ejecución del stored procedure y obtención de los resultados utilizando un SqlDataReader.
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            // Creación de objetos ReporteVenta y asignación de valores de cada fila del resultado a los atributos correspondientes.
                             Lista.Add(new ReporteVenta()
                             {
                                 F_Registro = dr["F_Registro"].ToString(),

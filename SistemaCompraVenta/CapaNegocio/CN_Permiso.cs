@@ -12,11 +12,11 @@ namespace CapaNegocio
 {
     public class CN_Permiso
     {
-        private CD_Permiso objcd_permiso = new CD_Permiso(); // Estamos creando un obj de la clse permiso
+        private CD_Permiso objcd_permiso = new CD_Permiso(); 
 
-        public List<Permiso> Listar(int id_Usuario) // Devuelve una lista de la clase permiso y su evento recibe el id_Usuario
+        public List<Permiso> Listar(int id_Usuario) 
         {
-            return objcd_permiso.Listar(id_Usuario); // Aqui pasamos el parametro id_Usuario
+            return objcd_permiso.Listar(id_Usuario);
 
         }
 

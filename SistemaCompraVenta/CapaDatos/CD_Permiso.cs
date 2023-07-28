@@ -13,35 +13,35 @@ namespace CapaDatos
 {
     public class CD_Permiso
     {
-        public List<Permiso> Listar(int id_Usuario) //listar, recibe el id de tipo entero y me retornar los permisos de un respectivo usuario
+        public List<Permiso> Listar(int id_Usuario) 
         {
-            List<Permiso> Lista = new List<Permiso>(); //aqui esta creando una lista de tipo list permiso
+            List<Permiso> Lista = new List<Permiso>(); 
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    StringBuilder query = new StringBuilder(); // me ayuda hacer saltos de linea
+                    StringBuilder query = new StringBuilder(); 
                     query.AppendLine("select p.id_Rol,p.Nom_Menu from PERMISO p");
                     query.AppendLine("inner join ROL r on r.id_Rol = p.id_Rol");
                     query.AppendLine("inner join USUARIO u on u.id_Rol = r.id_Rol");
-                    query.AppendLine("where u.id_Usuario = @id_Usuario"); // Aqui cambia de valor por el id_Usuario que se recibe
+                    query.AppendLine("where u.id_Usuario = @id_Usuario"); 
 
 
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.Parameters.AddWithValue("id_Usuario", id_Usuario); // Aqui se remplaza el @id_usuario por el valor del id_Usuario
+                    cmd.Parameters.AddWithValue("id_Usuario", id_Usuario); 
                     cmd.CommandType = CommandType.Text;
 
                     oconexion.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()) // Para dar lectura 
+                    using (SqlDataReader dr = cmd.ExecuteReader()) 
                     {
                         while (dr.Read())
                         {
                             Lista.Add(new Permiso()
                             {
-                                oRol = new Rol() { id_Rol = Convert.ToInt32(dr["id_Rol"]) }, //Le estamos pasando el mismo tipo de la clase rol y su propiedad le estamos dando el valor que obtenemos
+                                oRol = new Rol() { id_Rol = Convert.ToInt32(dr["id_Rol"]) }, 
                                 Nom_Menu = dr["Nom_Menu"].ToString(),
                             });
                         }

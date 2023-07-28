@@ -31,3 +31,14 @@ C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompra
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\User\Documents\PROYECTOS - IMPORTANTES\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\User\Documents\111 PROYECTOS - IMPORTANTES - SISTEMAS\SistemaCompraVenta\SistemaCompraVenta\CapaNegocio\obj\Debug\CapaNegocio.pdb
